@@ -14,9 +14,7 @@
 Route::get('/welcome', function () {
     return view('welcome');
 });
-Route::get('/','navshop@getHeaderFooter'  );
+Route::get('/','navshop@getHeaderFooter');
 
-Route::get('/register', function () {
-    return view('register');
-});
+Route::get('/register','Register@register');
 Route::get('/login','navshop@login');
