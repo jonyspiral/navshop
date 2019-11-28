@@ -1,12 +1,12 @@
 
 <?php
-    require_once('clases/Autoload.php');
+    //require_once('clases/Autoload.php');
     $usuario= null;
-    $auth = new Autenticador;
-    $conexion = new Conexion();
-    $bd = new BaseDatos;
-    $validador= New Validador ($bd);
-    $auth = new Autenticador;
+
+  //  $conexion = new Conexion();
+    $db = new DataBase;
+    $validator= New Validator ($db);
+    $auth = new Authenticator;
     $email = '';
     $password = '';
     $errores = [];
@@ -16,13 +16,13 @@
     // $resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
     // var_dump($resultado);
 
-    if ($validador->estaElUsuarioLogeado()){
-        header('location:miPerfil.php');
+    if ($validator->estaElUsuarioLogeado()){
+        header('location:miPerfil');
       }else{
         if (isset($_COOKIE['mantener'])) {
-  $usuario= $validador->buscarUsuarioEmail($_COOKIE['mantener']);
+  $usuario= $validator->buscarUsuarioEmail($_COOKIE['mantener']);
           $auth->loguear($usuario);
-          header('location:miPerfil.php');
+          header('location:miPerfil');
       }
     }
 if ($_POST) {
@@ -34,7 +34,7 @@ if ($_POST) {
       $usuario = $bd->buscarUsuarioEmail($email);
     //iniciar session
       $auth->loguear($usuario);
-      header('location:miPerfil.php');
+      header('location:miPerfil');
 
     }
 
@@ -73,7 +73,7 @@ if ($_POST) {
             </a>
           </div>
           <div class="flexCenterH ">
-          <form class="" action= "login.php" method="post" >
+          <form class="" action= "login" method="post" >
 
           <!--<label class="containerDentro"for="email">Email address</label>-->
           <input type="text" class="formControl" id="email" aria-describedby="emailHelp" placeholder="email" name="email" value="<?= $email ?>">
