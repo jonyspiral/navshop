@@ -1,0 +1,8 @@
+id,user,name,lastName,password,email,avatar,is_admin,created_at,updated_at
+6,carlo,Carlos,menem,$2y$10$R/d/4MIxyN6Cr3KwmKBMqO6cOIHf63w02y0os2aeju5IoqxmvpFtO,c@c.com,c@c.com.jpg,NULL,NULL,NULL
+7,dori,dori,"de nemo",$2y$10$ym/AFtlI0hqffLndM4y0k.MRNK7WyQ0GVmSQjEvFfw4hZxntUlPwi,d@d.com,d@d.com.jpg,NULL,NULL,NULL
+8,poto,esteban,Spotorno,$2y$10$5fEou.of65GFTTER5/LkaesxfbP0h/m4CBJVjVZ3ajTuG2vkhtfkS,e@e.com,e@e.com.jpg,NULL,NULL,NULL
+16,turco,fabio,Buede,$2y$10$9DKKzTXnzCnd4G0xgx0HWe2HrPEhd0GkYNOE97UzCQiNcEaugL3yC,f@f.com,default.png,NULL,NULL,NULL
+17,gato,gabriel,gomez,$2y$10$Md38jyEzb3stOJ6n87.2k.gPtuIKQdQJW1d4/.6vi.B1BuARmM0da,g@g.com,default.png,NULL,NULL,NULL
+18,sol,"solange sabrina",raspa,$2y$10$iPvpV2aJUjj0dGga8ONZB.JN31w3VRGVeyxC9RIcDrjobgxW59Xxa,sol@sol.com,sol@sol.com.jpg,NULL,NULL,NULL
+20,a,alberto,fernandez,$2y$10$5Fn5T.OyXFyepVeL4kpuKOiJ2ioY/V0yjlXoi4TjXdHdh/XzlCpB.,a@a.com,default.png,NULL,NULL,NULL
