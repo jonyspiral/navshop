@@ -32,7 +32,7 @@
 <body>
   <!-- cabecera -->
 
-  
+
 
 
 
@@ -53,7 +53,7 @@
           <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul id="headerMenuLi" style="width:AUTO; border-radius:.25em;" class="navbar-nav mr-auto mt-2 mt-lg-0" style="">
                     <li class="nav-item active">
-                    <a class="nav-link" href="teleAudio">Televisores y audio</a>
+                    <a class="nav-link" href="category">Televisores y audio</a>
                     </li>
                     <li class="nav-item active">
                     <a class="nav-link" href="celulares">Celulares</a>

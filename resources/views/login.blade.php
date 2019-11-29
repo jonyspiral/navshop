@@ -28,8 +28,8 @@
 
 
           <div id="containerLogo"class=" flexCenterH" style="    margin-bottom: 5%;">
-            <a class="" id="logo" href="index.php">
-              <img src="img\logo.png" alt="go to home" class="logo"  >
+            <a class="" id="logo" href="/index">
+              <img src="/img/logo.png" alt="go to home" class="logo"  >
             </a>
           </div>
           <div class="flexCenterH ">

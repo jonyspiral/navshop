@@ -13,8 +13,17 @@ public function getHeaderFooter(){
   //require_once('/app\Http\Controllers\DataBase.php');
   //require_once('/app\Http\Controllers\Validator.php');
   //require_once('/app\Http\Controllers\DataBase.php');
+
+  // $auth = new Autenticador;
+
+
   $db = new DataBase;
-  $validator= New Validator ($db);
+    $validator= New Validator ($db);
+  if (isset($_COOKIE['mantener'])) {
+     $usuario= $db->buscarUsuarioEmail($_COOKIE['mantener']);
+      $auth->loguear($usuario);
+  }
+
   if ($validator->estaElUsuarioLogeado()){
   $log= 'logout';
   $logTittle='Log out';

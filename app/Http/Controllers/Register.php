@@ -11,10 +11,10 @@ class Register extends Controller
    // $conexion= new Conexion;
    $db = new DataBase;
    $validador= New Validator ($db);
-     // if ($validador->estaElUsuarioLogeado()){
-     //     header('location:miPerfil.php');
-     // }
-     //
+     if ($validador->estaElUsuarioLogeado()){
+         header('location:miPerfil');
+     }
+
    $user ='';
    $email= '';
    $name ='';
@@ -56,6 +56,6 @@ class Register extends Controller
    //               header('location:miPerfil.php');
    //             }
     return view('register',compact('user','email','name','lastName','password'));
-
+    return view('miPerfil');
   }
 }

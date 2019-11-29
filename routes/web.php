@@ -17,4 +17,21 @@ Route::get('/welcome', function () {
 Route::get('/','navshop@getHeaderFooter');
 
 Route::get('/register','Register@register');
+Route::post('/register',function () {
+  // var_dump($_POST);
+});
+
 Route::get('/login','navshop@login');
+Route::get('/categoriesList','CategoryController@getCategories');
+Route::get('/miPerfil', 'MiPerfilController@toMiPerfil');
+  /* $log= 'logout';
+  $logTittle='Log out';
+  $avatar='';
+  $user= '';
+  $email = '';
+  $name= '';
+  $lastName= '';
+
+  $newPass= '';
+  $password='';
+return view('miPerfil',compact('user','email','name','lastName','password','avatar','log','logTittle',));*/

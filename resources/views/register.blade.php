@@ -1,5 +1,4 @@
 
-?>
  <!DOCTYPE html>
  <html lang="en" dir="ltr">
    <head>
@@ -15,9 +14,9 @@
      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 
-     <link rel="stylesheet" href="css/styles.css">
-      <link rel="stylesheet" href="css/master.css">
-      <link rel="stylesheet" href="css/login.css">
+     <link rel="stylesheet" href="/css/styles.css">
+      <link rel="stylesheet" href="/css/master.css">
+      <link rel="stylesheet" href="/css/login.css">
      </head>
 
     <meta charset="utf-8">
@@ -29,13 +28,14 @@
   <div class="containerLogo">
 
 
-    <a class="" id="logo" href="Index.php">
+    <a class="" id="logo" href="Index">
     <img src="img\logo.png" alt="go to home" class="center logo" style="width:20%;"  >
     </a>
 
   </div>
 
-<form class="login" action="register.php" method="post" enctype="multipart/form-data">
+<form class="login" action="register" method="post" enctype="multipart/form-data">
+  @csrf
   <!-- files -->
 
   <div class="containerDentro" >
