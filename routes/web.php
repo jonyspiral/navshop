@@ -14,16 +14,16 @@
 Route::get('/welcome', function () {
     return view('welcome');
 });
-Route::get('/','navshop@getHeaderFooter');
+Route::get('/','IndexController@loadIndex');
 
 Route::get('/register','Register@register');
 Route::post('/register',function () {
   // var_dump($_POST);
 });
 
-Route::get('/login','navshop@login');
+Route::get('/login','IndexControlle@loadLogin');
 Route::get('/categoriesList','CategoryController@getCategories');
-Route::get('/miPerfil', 'MiPerfilController@toMiPerfil');
+Route::get('/miPerfil','MiPerfilController@toMiPerfil');
   /* $log= 'logout';
   $logTittle='Log out';
   $avatar='';

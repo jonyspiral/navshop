@@ -1,12 +1,12 @@
 @extends('layouts/headerFooter')
 @section('main')
 
-@foreach ($categories as $category )
+{{-- @foreach ($categories as $category )
 <div class="card styleLogin" style= "width: 300px height:300px;">
 
 </div>
-@endforeach
-  {{-- <article class="card styleLogin" style="">
+@endforeach--}}
+  <article class="card styleLogin" style="">
 
     <div id="imagenCard" class="" style="">
               <h6 class="center" style=" ">Smart TV 50” 4K Ultra HD TCL L50P65</h6>

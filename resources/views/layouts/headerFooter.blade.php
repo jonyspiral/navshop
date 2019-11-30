@@ -1,22 +1,12 @@
 
-<?php
 
-  // require_once('clases/Autoload.php');
-  // $bd = new BaseDatos;
-  // $auth = new Autenticador;
-  // if (isset($_COOKIE['mantener'])) {
-  //    $usuario= $bd->buscarUsuarioEmail($_COOKIE['mantener']);
-  //     $auth->loguear($usuario);
-  // }
-
-  ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
 
-    <title>Home</title>
+    <title><?= $title ?></title>
 
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -53,7 +43,7 @@
           <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul id="headerMenuLi" style="width:AUTO; border-radius:.25em;" class="navbar-nav mr-auto mt-2 mt-lg-0" style="">
                     <li class="nav-item active">
-                    <a class="nav-link" href="category">Televisores y audio</a>
+                    <a class="nav-link" href="categoriesList">Televisores y audio</a>
                     </li>
                     <li class="nav-item active">
                     <a class="nav-link" href="celulares">Celulares</a>

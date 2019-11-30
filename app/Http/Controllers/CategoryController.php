@@ -10,6 +10,7 @@ class CategoryController extends Controller
 
 
   public function getCategories(){
+    $title='Televisores y Audios';
     $db = new DataBase;
     $validator= New Validator ($db);
     if ($validator->estaElUsuarioLogeado()){
@@ -22,8 +23,8 @@ class CategoryController extends Controller
     $avatar='default.png';
 
   }
-  $categories=Category::all();
-  return view('categoriesList',compact('log','logTittle','avatar','categories'));
+  $categories='';/*Category::all();*/
+  return view('categoriesList',compact('log','logTittle','avatar','categories','title'));
 
 
 
