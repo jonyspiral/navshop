@@ -1,6 +1,6 @@
 @extends('layouts/headerFooter')
 @section('css')
-<link rel="stylesheet" href="css/product.css">
+<link rel="stylesheet" href="/css/product.css">
 @endsection
 @section('main')
   @foreach ($products as $product )
@@ -18,12 +18,12 @@
 
                       <a id="buttonCard1" href="cart" class=" btn btn-primary buttonCard btn-lg active " role="button" aria-pressed="true"><img src="https://img.icons8.com/ios-filled/50/000000/add-shopping-cart.png"></a>
                       <a id="buttonCard1" href="details" target="_blank" class=" btn btn-primary btn-lg active" role="button" aria-pressed="true" style="cursor: zoom-in"><img  src="https://img.icons8.com/ios-filled/50/000000/zoom-to-extents.png"></a>
-                      <img id="cuotas" src="img/12cuotas.png" alt="12-cuotas-sin-interes" style="">
+                      <img id="cuotas" src="/img/12cuotas.png" alt="12-cuotas-sin-interes" style="">
             </div>
      </div>
      <div id="containerPrice" class="center" style="">
-        <span class="priceOld">{{$product->price}}</span>
-        <span class="price">{{$product->price}}</span>
+        <span class="priceOld dollars">{{$product->price}}</span>
+        <span class="price dollars ">{{$product->getpriceOff()}}</span>
         <span class="discount">{{$product->discount}}% Off</span>
     </div>
      <div id="containerDescript" class="center" style="">

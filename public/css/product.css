@@ -14,11 +14,12 @@
     bottom:80px;
   }
   #containerPrice{
+    justify-items: center;
     position: relative;
-    display: inline-block;
-    width: 70%;
-   margin-left: 15%;
-    margin-right: 15%;
+    display: table-header-group;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 0%;
     bottom: 35px;
   }
 
@@ -114,6 +115,7 @@ margin-right:2,5%;
 
 }}*/
 
+.dollars:before { content:'$'; }
 
 .price{
   font-family: "Work Sans", sans-serif;
@@ -121,6 +123,7 @@ margin-right:2,5%;
   text-align: left;
     font-size: 19px;
     font-weight: 600;
+    margin:2%;
 
 }
 
@@ -133,6 +136,7 @@ margin-right:2,5%;
     letter-spacing: -0.3px;
     color: rgb(217, 49, 117);
     margin-top: 5px;
+    margin:2%;
 
 }
 
@@ -143,6 +147,7 @@ margin-right:2,5%;
     margin-right: 10px;
     font-size: 17px;
     text-decoration: line-through;
+    margin:2%;
 }
 
 /*ipads
