@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
-
+use App\Producto;
 class CategoryController extends Controller
 {
   public function getCategories(){
@@ -51,7 +51,7 @@ public function getProducts($id){
 
   $products=Product::Where ($id)//// WARNING:
 
-  
+
 
   }
 return view('productsList',compact('idCategory'));
