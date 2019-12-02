@@ -18,14 +18,10 @@
 <link rel="stylesheet" href="/css/styles.css">
 <link rel="stylesheet" href="/css/master.css">
 <link rel="stylesheet" href="/css/home.css">
+@yield('css')
 </head>
 <body>
   <!-- cabecera -->
-
-
-
-
-
 <header>
   <div  class="containerExt  ">
 
@@ -42,7 +38,12 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul id="headerMenuLi" style="width:AUTO; border-radius:.25em;" class="navbar-nav mr-auto mt-2 mt-lg-0" style="">
+                  @foreach ($categories as $category )
                     <li class="nav-item active">
+                    <a class="nav-link" href="/categoryList/{{$category->id}}"> {{$category->name}}</a>
+                    </li>
+                  @endforeach
+                    {{-- <li class="nav-item active">
                     <a class="nav-link" href="categoriesList">Televisores y audio</a>
                     </li>
                     <li class="nav-item active">
@@ -50,7 +51,7 @@
                     </li>
                     <li class="nav-item active">
                     <a class="nav-link" href="notebooks" >Notebooks</a>
-                    </li>
+                    </li> --}}
                 </ul>
                 <div class=""style="width: fit-content;
                       padding: 3px;

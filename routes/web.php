@@ -18,11 +18,13 @@ Route::get('/','IndexController@loadIndex');
 
 Route::get('/register','Register@register');
 Route::post('/register',function () {
-  // var_dump($_POST);
+
 });
 
 Route::get('/login','IndexControlle@loadLogin');
 Route::get('/categoriesList','CategoryController@getCategories');
+Route::get('/categoryList/{id}','CategoryController@getRoute');
+
 Route::get('/miPerfil','MiPerfilController@toMiPerfil');
   /* $log= 'logout';
   $logTittle='Log out';

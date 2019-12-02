@@ -1,6 +1,6 @@
 
 @extends('layouts/headerFooter')
-
+@section('css')
 @section('main')
 <div id="padre"  class="contPadreFlex" style="width: 96%; margin: 2%; overflow:hidden;" >
     <div id="main" class=" styleLogin padd2" style="  margin: 2%;" >

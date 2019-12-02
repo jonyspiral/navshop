@@ -1,12 +1,12 @@
 @extends('layouts/headerFooter')
 @section('main')
 
-{{-- @foreach ($categories as $category )
-<div class="card styleLogin" style= "width: 300px height:300px;">
+ @foreach ($products  as $product )
+  <section style=" height:300px; background-color:black;">
 
-</div>
-@endforeach--}}
-  <article class="card styleLogin" style="">
+  </section>
+@endforeach
+  {{-- <article class="card styleLogin" style="">
 
     <div id="imagenCard" class="" style="">
               <h6 class="center" style=" ">Smart TV 50” 4K Ultra HD TCL L50P65</h6>
@@ -74,7 +74,7 @@
              <span class="" width:100%="">Este tele se la rebanca.Podes ver nefli y escuchar spotify. Si tu viejo es zapatero zarpale la lata!!!</span>
           </div>
 
-</article> --}}
+</article>  --}}
 
 
 {{-- </section><!-- TERMINA grupoTarjeta --> --}}

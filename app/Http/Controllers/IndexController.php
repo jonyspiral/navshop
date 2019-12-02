@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Category;
 class IndexController extends Controller
 {
 
+
 public function loadIndex(){
+ $categories=Category::all();
   // $auth = new Autenticador;
   $title='Home';
     $db = new DataBase;
@@ -25,7 +27,7 @@ public function loadIndex(){
   $log= 'login';
   $logTittle='Log in';
   $avatar='default.png';
-  return view('index',compact('log','logTittle','avatar','title'));
+  return view('index',compact('log','logTittle','avatar','title','categories'));
 }
 
 }
