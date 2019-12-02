@@ -1,15 +1,17 @@
 @extends('layouts/headerFooter')
+@section('css')
+<link rel="stylesheet" href="css/product.css">
+@endsection
 @section('main')
+  @foreach ($products as $product )
+    {{-- <ul>
+      <li>{{$product->name}}  </li>
+    </ul> --}}
 
- @foreach ($products  as $product )
-  <section style=" height:300px; background-color:black;">
-
-  </section>
-@endforeach
-  {{-- <article class="card styleLogin" style="">
+ <article class="card styleLogin" style="">
 
     <div id="imagenCard" class="" style="">
-              <h6 class="center" style=" ">Smart TV 50” 4K Ultra HD TCL L50P65</h6>
+              <h6 class="center" style=" ">{{$product->name}}</h6>
 
                     <img id="" src="https://images.fravega.com/s500/d8b3078dcc3eedcb4547b50ba1dc3a8f.jpg" class="" style="width: 100%;border-radius: 15px;" alt="...">
             <div id="containerButton"class="center" style="">
@@ -20,15 +22,16 @@
             </div>
      </div>
      <div id="containerPrice" class="center" style="">
-        <span class="priceOld">$39.999</span>
-        <span class="price">$32.999</span>
-        <span class="discount">17% Off</span>
+        <span class="priceOld">{{$product->price}}</span>
+        <span class="price">{{$product->price}}</span>
+        <span class="discount">{{$product->discount}}% Off</span>
     </div>
      <div id="containerDescript" class="center" style="">
-       <span class="" width:100%="">Este tele se la rebanca.Podes ver nefli y escuchar spotify. Si tu viejo es zapatero zarpale la lata!!!</span>
+       <span class="" >{{$product->description}}</span>
     </div>
-
-    </article>
+</article>
+@endforeach
+      {{--
   <article class="card styleLogin" style="">
 
       <div id="imagenCard" class="" style="">

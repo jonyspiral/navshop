@@ -14,11 +14,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
      <script src=”prefixfree.min.js” type="text/javascript"></script>
-<!-- <link rel="stylesheet" href="css/login.css"> -->
-<link rel="stylesheet" href="/css/styles.css">
-<link rel="stylesheet" href="/css/master.css">
-<link rel="stylesheet" href="/css/home.css">
-@yield('css')
+ <link rel="stylesheet" href="css/login.css">
+<link rel="stylesheet" href="css/styles.css">
+
+ <link rel="stylesheet" href="/css/master.css">
+ <link rel="stylesheet" href="/css/product.css">
+{{-- @yield('css') --}}
 </head>
 <body>
   <!-- cabecera -->
@@ -43,15 +44,7 @@
                     <a class="nav-link" href="/categoryList/{{$category->id}}"> {{$category->name}}</a>
                     </li>
                   @endforeach
-                    {{-- <li class="nav-item active">
-                    <a class="nav-link" href="categoriesList">Televisores y audio</a>
-                    </li>
-                    <li class="nav-item active">
-                    <a class="nav-link" href="celulares">Celulares</a>
-                    </li>
-                    <li class="nav-item active">
-                    <a class="nav-link" href="notebooks" >Notebooks</a>
-                    </li> --}}
+
                 </ul>
                 <div class=""style="width: fit-content;
                       padding: 3px;
@@ -84,6 +77,7 @@
         <!-- fin cabecera -->
 <main class="containerExt" role="main">
 @yield('main')
+
 </main>
   <!-- FOOTER -->
   <footer class="containerExt"style="width: 98%;" >
