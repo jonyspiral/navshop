@@ -1,7 +1,7 @@
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: localhost    Database: navshop
--- ------------------------------------------------------
+-- -------------------------------------------------------
 -- Server version	5.5.5-10.4.6-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
