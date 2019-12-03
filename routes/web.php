@@ -15,6 +15,9 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 Route::get('/','IndexController@loadIndex');
+Route::get('/menu',function () {
+  return view('/partials/menu')
+});
 
 Route::get('/register','Register@register');
 Route::post('/register',function () {
@@ -24,11 +27,13 @@ Route::post('/register',function () {
 Route::get('/login','IndexControlle@loadLogin');
 Route::get('/categoriesList','CategoryController@getCategories');
 Route::get('/categoryList/{id}','CategoryController@getRoute');
-
+Route::get('/addProduct','ProductController@add');
 Route::get('/miPerfil','MiPerfilController@toMiPerfil');
   /* $log= 'logout';
   $logTittle='Log out';
   $avatar='';
+
+
   $user= '';
   $email = '';
   $name= '';
