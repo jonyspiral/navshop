@@ -17,15 +17,17 @@ Route::get('/welcome', function () {
 Route::get('/','IndexController@loadIndex');
 
 Route::get('/register','Register@register');
-Route::post('/register',function () {
-
-});
+Route::post('/register','Register@add');
 
 Route::get('/login','IndexControlle@loadLogin');
 Route::get('/categoriesList','CategoryController@getCategories');
 Route::get('/categoryList/{id}','CategoryController@getRoute');
 
 Route::get('/miPerfil','MiPerfilController@toMiPerfil');
+
+
+
+
   /* $log= 'logout';
   $logTittle='Log out';
   $avatar='';
@@ -37,3 +39,7 @@ Route::get('/miPerfil','MiPerfilController@toMiPerfil');
   $newPass= '';
   $password='';
 return view('miPerfil',compact('user','email','name','lastName','password','avatar','log','logTittle',));*/
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

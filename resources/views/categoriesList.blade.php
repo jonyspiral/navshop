@@ -23,7 +23,7 @@
      </div>
      <div id="containerPrice" class="center" style="">
         <span class="priceOld dollars">{{$product->price}}</span>
-        <span class="price dollars ">{{$product->getpriceOff()}}</span>
+        <span class="price dollars">{{$product->getpriceOff()}}</span>
         <span class="discount">{{$product->discount}}% Off</span>
     </div>
      <div id="containerDescript" class="center" style="">

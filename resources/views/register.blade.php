@@ -35,7 +35,7 @@
   </div>
 
 <form class="login" action="register" method="post" enctype="multipart/form-data">
-  @csrf
+  {{csrf_field()}}
   <!-- files -->
 
   <div class="containerDentro" >
