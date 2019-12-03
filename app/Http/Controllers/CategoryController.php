@@ -12,7 +12,7 @@ public function getRoute($id){
 
   $title=Category::find($id)->name;
   $categories=Category::all();
-  $products=Product::where('category_id','=',"$id")->get();
+  $products=Product::where('category_id','=',"$id")->paginate();
 
   $db = new DataBase;
   $validator= New Validator ($db);
