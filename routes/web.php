@@ -15,9 +15,7 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 Route::get('/','IndexController@loadIndex');
-Route::get('/menu',function () {
-  return view('/partials/menu')
-});
+Route::get('/menu','CategoryController@menu');
 
 Route::get('/register','Register@register');
 Route::post('/register','Register@add');

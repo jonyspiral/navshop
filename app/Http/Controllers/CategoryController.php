@@ -14,19 +14,12 @@ public function getRoute($id){
   $categories=Category::all();
   $products=Product::where('category_id','=',"$id")->paginate();
 
-  $db = new DataBase;
-  $validator= New Validator ($db);
-    if ($validator->estaElUsuarioLogeado()){
-  $log= 'logout';
-  $logTittle='Log out';
-  $avatar='';/*$_SESSION['avatar'];*/
-  }else{
-  $log= 'login';
-  $logTittle='Log in';
-  $avatar='default.png';
 
-  }
-return view('categoriesList',compact('log','logTittle','avatar','categories','title','id','products'));
+return view('categoriesList',compact('title','id','products'));
+}
+public function menu(){
+  $categories=Category::all();
+return view('menu',compact('categories'));
 }
 
 }

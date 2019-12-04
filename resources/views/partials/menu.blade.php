@@ -24,9 +24,9 @@
                     overflow: hidden;
                     ">
 
-                    <a class="navbar-brand" style="width: 60px; text-align:center; "  target="_blank" href="<?=$log?>"><?=$logTittle ?></a>
+                    <a class="navbar-brand" style="width: 60px; text-align:center; "  target="_blank" href="login">aca va log </a>
                     <a href="miPerfil" id="containerLogo" style="width:auto;display: -webkit-flex;">
-                    <img href="miPerfil"; class=""  style="width:50px;border-radius:15%;"src="img\avatar\<?=$avatar?>" alt="Yo"style=" ">
+                    <img href="miPerfil"; class=""  style="width:50px;border-radius:15%;"src="img\avatar\default.png" alt="Yo"style=" ">
                     </a>
               </div>
                     <form class="center  form-inline my-2 my-lg-0" style="width:auto;">
