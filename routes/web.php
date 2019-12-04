@@ -17,10 +17,10 @@ Route::get('/welcome', function () {
 Route::get('/','IndexController@loadIndex');
 Route::get('/menu','CategoryController@menu');
 
-Route::get('/register','Register@register');
-Route::post('/register','Register@add');
+// Route::get('/register','Register@register');
+// Route::post('/register','Register@add');
 
-Route::get('/login','IndexControlle@loadLogin');
+// Route::get('/login','IndexControlle@loadLogin');
 Route::get('/categoriesList','CategoryController@getCategories');
 Route::get('/categoryList/{id}','CategoryController@getRoute');
 Route::get('/addProduct','ProductController@add');

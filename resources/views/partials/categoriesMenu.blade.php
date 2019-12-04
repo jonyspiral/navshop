@@ -4,5 +4,4 @@
     <a class="nav-link" href="/categoryList/{{$category->id}}"> {{$category->name}}</a>
     </li>
   @endforeach
-
 </ul>
