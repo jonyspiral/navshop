@@ -14,7 +14,7 @@
 Route::get('/welcome', function () {
     return view('welcome');
 });
-Route::get('/','IndexController@loadIndex');
+Route::get('','IndexController@loadIndex');
 Route::get('/menu','CategoryController@menu');
 
 // Route::get('/register','Register@register');

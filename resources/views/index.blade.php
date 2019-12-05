@@ -1,7 +1,7 @@
 @extends('layouts/headerFooter')
 @section('main')
 
-  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel"style="margin-top:8%">
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img src="/img/tvs.png" class="d-block w-100" alt="...">

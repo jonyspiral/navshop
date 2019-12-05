@@ -3,38 +3,34 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Auth;
 class MiPerfilController extends Controller
 {
     public function toMiPerfil(){
-
-  $user= '';
-  $email = '';
-  $name= '';
-  $lastName= '';
-  $avatar = '';
+  $Userlog = Auth::user();
+  $user= $Userlog->user;
+  $email = $Userlog->email;
+  $name= $Userlog->name;
+  $lastName= $Userlog->lastName;
+  $avatar = $Userlog->avatar;
   $newPass= '';
-  $password='';
+  $password=$Userlog->Password;
   $confirmPassword='';
-  $errores=[];
-  $resultado='';
-  $_SESSION= '';
-  $db = new DataBase;
-    $validator= New Validator ($db);
-    if (isset($_COOKIE['mantener'])) {
-       $usuario= $db->buscarUsuarioEmail($_COOKIE['mantener']);
-        $auth->loguear($usuario);
-    }
-    if ($validator->estaElUsuarioLogeado()){
-    $log= 'logout';
-    $logTittle='Log out';
-    $avatar='';/*$_SESSION['avatar'];*/
-    }else{
-    $log= 'login';
-    $logTittle='Log in';
-    $avatar='default.png';
-    return view('miPerfil',compact('user','email','name','lastName','password','log','logTittle','avatar'));
+  $title='Mi Perfil';
 
-    }
-    }
+
+  if ($Userlog==null){
+    $log= 'login';
+    $logTitle='Log in';
+    $avatar='/img/avatar/default.png';
+  }else{
+    $log= 'logout';
+    $logTitle='Log out';
+    $avatar='/img/avatar/'.$Userlog->avatar;
+  }
+    return view('miPerfil',compact('user','email','name','lastName','password','log','logTitle','avatar','title'));
+
+
+
+}
 }
