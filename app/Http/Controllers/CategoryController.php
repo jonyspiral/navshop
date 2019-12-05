@@ -16,6 +16,7 @@ if ($Userlog==null){
   $log= 'login';
   $logTitle='Log in';
   $avatar='/img/avatar/default.png';
+  
 }else{
   $log= 'logout';
   $logTitle='Log out';

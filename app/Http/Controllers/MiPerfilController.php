@@ -19,10 +19,12 @@ class MiPerfilController extends Controller
   $title='Mi Perfil';
 
 
+
   if ($Userlog==null){
     $log= 'login';
     $logTitle='Log in';
     $avatar='/img/avatar/default.png';
+    return redirect('login');
   }else{
     $log= 'logout';
     $logTitle='Log out';

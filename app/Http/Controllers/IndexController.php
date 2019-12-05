@@ -18,7 +18,7 @@ public function loadIndex(){
    $logTitle='Log in';
    $avatar='/img/avatar/default.png';
    }else{
-   $log= 'logout';
+   $log= '/logout';
    $logTitle='Log out';
    $avatar='/img/avatar/'.$Userlog->avatar;
    }
