@@ -12,7 +12,7 @@ public function getRoute($id){
 
   $title=Category::find($id)->name;
   $categories=Category::all();
-  $products=Product::where('category_id','=',"$id")->paginate();
+  $products=Product::where('category_id','=',"$id")->paginate(3);
 
 
 return view('categoriesList',compact('title','id','products'));

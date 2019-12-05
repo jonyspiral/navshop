@@ -5,13 +5,11 @@
 <link rel="stylesheet" href="/css/product.css">
 @endsection
 @section('main')
-  <section class="principal">
-        <div class="peliculas">
+
+        <div class="" style="margin-top:90px">
             <h2 class="titulo-nav">
-                <div >
-                  Peliculas en Digital Movies
-                </div>
-                <div class="">
+
+                <div class=""style="display: -webkit-box; font: -webkit-control;">
                   <ol class="breadcrumb">
                    <li class="breadcrumb-item">
                        <a href="peliculas.php?order=title">Title</a>
@@ -26,17 +24,19 @@
                        <a href="peliculas.php?order=awards">Awards</a>
                    </li>
                  </ol>
-                 <p class="card-text">
-                   <a class="btn btn-primary" href="">Ver Mas</a>
-                   <a class="btn btn-success" href="">Editar</a>
-                   </p>
+
                 </div>
                 <nav >
                   {{-- pagination --}}
+                  {{$products->links()}}
                 </nav>
+                <p class="card-text">
+                  <a class="btn btn-primary" href="">+</a>
+                  {{-- <a class="btn btn-success" href=""></a> --}}
+                  </p>
               </h2>
 
-              <div class="card-group">
+              <div class="">
             @foreach ($products as $product )
 
            <article class="card styleLogin" style="">
@@ -75,7 +75,7 @@
            </div> --}}
       </div>
     </div>
-</section>
+
 
 
 
