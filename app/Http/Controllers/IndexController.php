@@ -10,20 +10,8 @@ class IndexController extends Controller
 
 public function loadIndex(){
  $categories=Category::all();
-  // $auth = new Autenticador;
-  $title='Home';
-    $db = new DataBase;
-    $validator= New Validator ($db);
-  if (isset($_COOKIE['mantener'])) {
-     $usuario= $db->buscarUsuarioEmail($_COOKIE['mantener']);
-      $auth->loguear($usuario);
-  }
 
-  if ($validator->estaElUsuarioLogeado()){
-  $log= 'logout';
-  $logTittle='Log out';
-  $avatar='';/*$_SESSION['avatar'];*/
-  }else{
+  $title='Home';
   $log= 'login';
   $logTittle='Log in';
   $avatar='default.png';

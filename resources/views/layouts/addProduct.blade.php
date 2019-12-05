@@ -4,7 +4,6 @@
 @endsection --}}
 @section('main')
 
-
       <form method="post" action="">
 
         <input type="hidden" name="movie_id" value="">
