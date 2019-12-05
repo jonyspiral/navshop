@@ -24,7 +24,7 @@
 <body>
   <!-- cabecera -->
 <header>
-  @include('partials.menu',, ['sites' => $sites])
+  @include('partials.menu', ['categories' => $categories])
 </header>
         <!-- fin cabecera -->
 <main class="containerExt" role="main">
