@@ -31,7 +31,7 @@
                   {{$products->links()}}
                 </nav>
                 <p class="card-text">
-                  <a class="btn btn-primary" href="">+</a>
+                  <a class="btn btn-primary" href="/addProduct/{{$id}}">+</a>
                   {{-- <a class="btn btn-success" href=""></a> --}}
                   </p>
               </h2>

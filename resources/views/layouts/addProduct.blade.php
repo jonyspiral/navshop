@@ -4,7 +4,8 @@
 @endsection --}}
 @section('main')
 
-      <form method="post" action="">
+      <form class""method="post" action="/addProduct">
+        {{csrf_field()}}
 
         <input type="hidden" name="id" value="">
 
@@ -21,6 +22,7 @@
                 <label for="category_id">categoria</label>
                 <input type="radio" name="category_id" id="category_id"/>
             </div>
+
             <div>
                 <label for="stock">Stock</label>
                 <input type="number" name="stock" id="stock"/>
