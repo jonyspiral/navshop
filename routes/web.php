@@ -26,23 +26,5 @@ Route::get('/categoryList/{id}','CategoryController@getRoute');
 Route::get('/addProduct','ProductController@add');
 Route::get('/miPerfil','MiPerfilController@toMiPerfil');
 
-
-
-
-  /* $log= 'logout';
-  $logTittle='Log out';
-  $avatar='';
-
-
-  $user= '';
-  $email = '';
-  $name= '';
-  $lastName= '';
-
-  $newPass= '';
-  $password='';
-return view('miPerfil',compact('user','email','name','lastName','password','avatar','log','logTittle',));*/
-
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');

@@ -6,32 +6,40 @@
 
       <form method="post" action="">
 
-        <input type="hidden" name="movie_id" value="">
+        <input type="hidden" name="id" value="">
 
           <div class="form-group">
             <div>
-                <label for="titulo">Titulo</label>
-                <input type="text" name="title" id="title"/>
+                <label for="name">modelo</label>
+                <input type="text" name="name" id="name"/>
             </div>
             <div>
-                <label for="rating">Rating</label>
-                <input type="text" name="rating" id="rating"/>
+                <label for="image">imagen</label>
+                <input type="image" name="image" id="image"/>
             </div>
             <div>
-                <label for="premios">Premios</label>
-                <input type="text" name="awards" id="awards"/>
+                <label for="category_id">categoria</label>
+                <input type="radio" name="category_id" id="category_id"/>
             </div>
             <div>
-                <label for="length">Duracion</label>
-                <input type="text" name="length" id="length"/>
+                <label for="stock">Stock</label>
+                <input type="number" name="stock" id="stock"/>
             </div>
 
             <div>
-                <label for="duracion">Extreno</label>
-                <input type="date" name="release_date" id="release_date"/>
+                <label for="description">Descripcion</label>
+                <input type="text" name="description" id="description"/>
+            </div>
+            <div>
+                <label for="price">Precio venta</label>
+                <input type="text" name="price" id="price"/>
+            </div>
+            <div>
+                <label for="discount"> Descuento</label>
+                <input type="number" name="discount" id="discount"/>
             </div>
 
-            <input type="submit" value="Agregar Pelicula" name="submit"/>
+            <input type="submit" value="Agregar producto" name="submit"/>
         </form>
 
 @endsection

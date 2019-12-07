@@ -17,8 +17,8 @@ class MiPerfilController extends Controller
   $password='';
   $confirmPassword='';
   $errores=[];
-  $resultado='';
-  $_SESSION= '';
+
+
   $db = new DataBase;
     $validator= New Validator ($db);
     if (isset($_COOKIE['mantener'])) {

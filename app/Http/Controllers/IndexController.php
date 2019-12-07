@@ -18,7 +18,7 @@ public function loadIndex(){
   return view('index',compact('log','logTittle','avatar','title','categories'));
 }
 
-}
+
 public function loadLogin(){
     $title;
     $email='';
