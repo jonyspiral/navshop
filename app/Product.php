@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use App\Category;
 class Product extends Model
 {
   // public $table= "categories";
@@ -14,5 +14,8 @@ class Product extends Model
     $priceOff=$this->price* (1-$this->discount/100);
     return $priceOff;
   }
-  
+  public function category(){
+    return $this->belongsto("App\Category","category_id");
+  }
+
 }

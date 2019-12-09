@@ -23,7 +23,7 @@
           </div>
           <div>
               <label for="category_id">categoria</label>
-              <input type="text" name="category_id" value="{{$product->category_id}}"/>
+              <input type="text" name="category_id" value="{{$product->category->name}}"/>
           </div>
           <div>
               <label for="price">Precio venta</label>
