@@ -23,7 +23,10 @@ Route::get('/menu','CategoryController@menu');
 
 Route::get('/categoriesList','CategoryController@getCategories');
 Route::get('/categoryList/{id}','CategoryController@getRoute');
-Route::get('/addProduct/{id}','ProductController@add');
+Route::get('/addProduct/{id}','ProductController@loadForm');
+Route::post('/addProduct','ProductController@add');
+Route::get('/detail/{id}','ProductController@loadFormDetail');
+Route::post('/deleteProduct','ProductController@delete');
 
 Route::get('/miPerfil','MiPerfilController@toMiPerfil');
 // Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');

@@ -1,47 +1,52 @@
 @extends('layouts/headerFooter')
-{{-- @section('css')
-<link rel="stylesheet" href="/css/product.css">
-@endsection --}}
+ @section('css')
+<link rel="stylesheet" href="/css/login.css">
+@endsection
 @section('main')
-
-      <form class""method="post" action="/addProduct">
+<div class="styleLogin container"style= "  margin-top: 90px;">
+<ul class="errores">
+  @foreach ($errors->all() as $error)
+    <li style= " color:red;">
+      {{$error}}
+    </li>
+  @endforeach
+</ul>
+      <form class="  flexCenterH" method="post" action="/addProduct" style= "margin-top: 30px; " enctype="multipart/form-data">
         {{csrf_field()}}
-
-        <input type="hidden" name="id" value="">
-
+        {{-- <input type="hidden" name="id" value=""> --}}
           <div class="form-group">
             <div>
                 <label for="name">modelo</label>
-                <input type="text" name="name" id="name"/>
+                <input type="text" name="name" id="name" value="{{old('name')}}"/>
             </div>
             <div>
                 <label for="image">imagen</label>
-                <input type="image" name="image" id="image"/>
+                <input type="file" name="image" id="image" value="{{old('image')}}"/>
             </div>
             <div>
                 <label for="category_id">categoria</label>
-                <input type="radio" name="category_id" id="category_id"/>
+                <input type="text" name="category_id" value="{{$id}}"id="category_id"/>
             </div>
 
             <div>
                 <label for="stock">Stock</label>
-                <input type="number" name="stock" id="stock"/>
+                <input type="number" name="stock" id="stock" value="{{old('stock')}}"/>
             </div>
 
             <div>
                 <label for="description">Descripcion</label>
-                <input type="text" name="description" id="description"/>
+                <input type="text" name="description" id="description"value="{{old('description')}}"/>
             </div>
             <div>
                 <label for="price">Precio venta</label>
-                <input type="text" name="price" id="price"/>
+                <input type="number" name="price" id="price"value="{{old('price')}}"/>
             </div>
             <div>
                 <label for="discount"> Descuento</label>
-                <input type="number" name="discount" id="discount"/>
+                <input type="number" name="discount" id="discount"{{old('discount')}}/>
             </div>
 
             <input type="submit" value="Agregar producto" name="submit"/>
         </form>
-
+</div>
 @endsection

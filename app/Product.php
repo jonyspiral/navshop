@@ -14,4 +14,5 @@ class Product extends Model
     $priceOff=$this->price* (1-$this->discount/100);
     return $priceOff;
   }
+  
 }

@@ -49,6 +49,8 @@
     top: 5px;
 }
 #containerDescript{
+  height: 50px;
+  overflow:auto;
   bottom: 20px;
   border-radius: 15px;
   background-color: white;

@@ -41,14 +41,14 @@
 
            <article class="card styleLogin" style="">
 
-              <div id="imagenCard" class="" style="">
+              <div id="imagenCard" class="" style="height:300px;">
                         <h6 class="center" style=" ">{{$product->name}}</h6>
 
-                              <img id="" src="https://images.fravega.com/s500/d8b3078dcc3eedcb4547b50ba1dc3a8f.jpg" class="" style="width: 100%;border-radius: 15px;" alt="...">
+                              <img id="" src="/storage/{{$product->image}}" class="" style="width: 100%;height:300px;border-radius: 15px;" alt="">
                       <div id="containerButton"class="center" style="">
 
                                 <a id="buttonCard1" href="cart" class=" btn btn-primary buttonCard btn-lg active " role="button" aria-pressed="true"><img src="https://img.icons8.com/ios-filled/50/000000/add-shopping-cart.png"></a>
-                                <a id="buttonCard1" href="details" target="_blank" class=" btn btn-primary btn-lg active" role="button" aria-pressed="true" style="cursor: zoom-in"><img  src="https://img.icons8.com/ios-filled/50/000000/zoom-to-extents.png"></a>
+                                <a id="buttonCard1" href="/detail/{{$product->id}}" target="_blank" class=" btn btn-primary btn-lg active" role="button" aria-pressed="true" style="cursor: zoom-in"><img  src="https://img.icons8.com/ios-filled/50/000000/zoom-to-extents.png"></a>
                                 <img id="cuotas" src="/img/12cuotas.png" alt="12-cuotas-sin-interes" style="">
                       </div>
                </div>
