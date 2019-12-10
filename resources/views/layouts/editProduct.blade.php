@@ -19,7 +19,8 @@
     </li>
   @endforeach
 </ul>
-<div class="form-group"><form class=" flexCenterH" method="post" action="/addProduct" style= "margin-top: 30px; " enctype="multipart/form-data">
+<div class="form-group">
+  <form class=" flexCenterH" method="post" action="/addProduct" style= "margin-top: 30px; " enctype="multipart/form-data">
   {{csrf_field()}}
   <div class="form-group">
     <input   type="hidden" name="id" value="{{old($product->id)}}">
