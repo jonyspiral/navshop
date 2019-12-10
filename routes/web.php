@@ -26,6 +26,8 @@ Route::get('/categoryList/{id}','CategoryController@getRoute');
 Route::get('/addProduct/{id}','ProductController@loadForm');
 Route::post('/addProduct','ProductController@add');
 Route::get('/detail/{id}','ProductController@loadFormDetail');
+Route::get('/editProduct/{id}','ProductController@loadFormEdit');
+
 Route::post('/deleteProduct','ProductController@delete');
 
 Route::get('/miPerfil','MiPerfilController@toMiPerfil');

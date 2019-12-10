@@ -32,4 +32,6 @@ public function loadLogin(){
  return view('login',compact('email','errores','title'));
   }
 
+  
+
 }

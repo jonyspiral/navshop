@@ -10,4 +10,7 @@ class Category extends Model
     public $guarded =[];
     // public $primaryKey = "id";
     // public $timesstamps =false;
+    public function Products(){
+      return $this->hasMany("App\Product","category_id");
+    }
 }

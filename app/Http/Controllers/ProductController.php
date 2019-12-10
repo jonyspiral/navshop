@@ -14,7 +14,7 @@ $title='Agrega Productos.';
 
 $Userlog = Auth::user();
 if ($Userlog==null){
-$log= 'login';
+$log= '/auth/login';
 $logTitle='Log in';
 $avatar='/img/avatar/default.png';
 }else{
@@ -22,7 +22,7 @@ $log= '/logout';
 $logTitle='Log out';
 $avatar='/img/avatar/'.$Userlog->avatar;
 }
-$title=Category::find($id)->name;
+// $title=Category::find($id)->name;
 $categories=Category::all();
 
 return view('layouts/addProduct',compact('title','categories','log','logTitle','avatar','id'));
@@ -61,6 +61,29 @@ public function add(Request $req){
   $product->save();
   return redirect("/categoryList/$product->category_id");
 }
+// Editar
+public function loadFormEdit($id){
+
+$title='Editar Producto.';
+
+$Userlog = Auth::user();
+if ($Userlog==null){
+$log= 'login';
+$logTitle='Log in';
+$avatar='/img/avatar/default.png';
+}else{
+$log= '/logout';
+$logTitle='Log out';
+$avatar='/img/avatar/'.$Userlog->avatar;
+}
+
+// $title=Category::find($id)->name;
+$categories=Category::all();
+$product= Product::find($id);
+
+return view('/layouts/editProduct',compact('title','categories','log','logTitle','avatar','product'));
+  }
+
 public function loadFormDetail($id){
 
 $title='Detalle del Producto.';
@@ -75,12 +98,13 @@ $log= '/logout';
 $logTitle='Log out';
 $avatar='/img/avatar/'.$Userlog->avatar;
 }
+
 // $title=Category::find($id)->name;
 $categories=Category::all();
 $product= Product::find($id);
 return view('detail',compact('title','categories','log','logTitle','avatar','id','product'));
   }
-  public function delete(Request $req){
+    public function delete(Request $req){
   $id=$req['id'];
   $product= Product::find($id);
   $product->delete();

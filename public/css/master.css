@@ -15,7 +15,7 @@
   display: -ms-flexbox;
   display: -webkit-flex;
   justify-content: center;
-  align-items: stretch;
+  align-items: center;
 
 }
 .containerExt{
@@ -35,7 +35,7 @@
     left: 0;
     overflow: visible;
     z-index: 50;
-  
+
 }
 .maxViewport{
       height: 100vh;
