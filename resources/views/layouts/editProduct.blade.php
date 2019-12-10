@@ -22,7 +22,7 @@
 <div class="form-group"><form class=" flexCenterH" method="post" action="/addProduct" style= "margin-top: 30px; " enctype="multipart/form-data">
   {{csrf_field()}}
   <div class="form-group">
-    {{-- <input   type="hidden" name="id" value="{{$product->id}}"> --}}
+    <input   type="hidden" name="id" value="{{old($product->id)}}">
   <div>
       <label for="name">modelo</label>
       <input    type="text" name="name" id="name" value="{{$product->name}}"/>
@@ -55,8 +55,8 @@
       <input type="text" name="description" id="description" value="{{$product->description}}"/>
   </div>
 
-
-
+<input type="submit" value="guardar" name="guardar"href=""/>
+<input type="submit" value="cerrar" name="cerrar" href=""/>
 </form>
       {{-- <form class="  flexCenterH" method="post" action="/addProduct" style= "margin-top: 30px; " enctype="multipart/form-data">
         {{csrf_field()}}
