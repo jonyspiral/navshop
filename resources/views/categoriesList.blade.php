@@ -12,17 +12,15 @@
                 <div class=""style="display: -webkit-box; font: -webkit-control;">
                   <ol class="breadcrumb">
                    <li class="breadcrumb-item">
-                       <a href="peliculas.php?order=title">Title</a>
+                       <a href="peliculas.php?order=title">nombre</a>
                    </li>
                    <li class="breadcrumb-item">
-                       <a href="">Genre</a>
+                       <a href="">precio</a>
                    </li>
                    <li class="breadcrumb-item ">
-                       <a href="peliculas.php?order=rating">Rating</a>
+                       <a href="peliculas.php?order=rating">descuento</a>
                    </li>
-                   <li class="breadcrumb-item active">
-                       <a href="peliculas.php?order=awards">Awards</a>
-                   </li>
+                   
                  </ol>
 
                 </div>

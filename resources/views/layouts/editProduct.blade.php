@@ -2,10 +2,11 @@
  @section('css')
 <link rel="stylesheet" href="/css/login.css">
 @endsection
+
 @section('main')
   <div class="containerExt styleLogin" style="margin-top:90px; display:flex;" >
       <div class="form-group" style="display: contents;">
-        @if (isset($req))
+        @if (isset($product->image))
           <img src="/storage/{{$product->image}}" alt="" class="navbar-brand" style="width: 50%; border-radius: 5%; margin-right: 9%; margin-left: 1%;"  >
 @else
   <img src="/storage/default.png" alt="" class="navbar-brand" style="width: 50%; border-radius: 5%; margin-right: 9%; margin-left: 1%;"  >
@@ -20,7 +21,15 @@
   @endforeach
 </ul>
 <div class="form-group">
-  <form class=" flexCenterH" method="post" action="/addProduct" style= "margin-top: 30px; " enctype="multipart/form-data">
+  <div class="form-group" style="display: contents;">
+    @if (isset($req))
+      <img src="/storage/{{$product->image}}" alt="" class="navbar-brand" style="width: 50%; border-radius: 5%; margin-right: 9%; margin-left: 1%;"  >
+@else
+<img src="default.png" alt="" class="navbar-brand" style="width: 50%; border-radius: 5%; margin-right: 9%; margin-left: 1%;"  >
+
+    @endif
+  </div>
+  <form class=" flexCenterH" method="post" action="/editProduct/{{$product->id}}" style= "margin-top: 30px; " enctype="multipart/form-data">
   {{csrf_field()}}
   <div class="form-group">
     <input   type="hidden" name="id" value="{{old($product->id)}}">
@@ -32,10 +41,16 @@
       <label for="image">imagen</label>
       <input type="file" name="image" id="image" value="{{$product->image}}"/>
   </div>
+  <select>
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</select>
   <div>
       <label for="category_id">categoria</label>
       @if ($product->category)
-        <input   type="text" name="category_id" value="{{$product->id}}"/>
+        <input hidden   type="combo" name="category_id" value="{{$product->category_id}}"/>
       @endif
 
   </div>

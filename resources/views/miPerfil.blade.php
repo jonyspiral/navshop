@@ -7,9 +7,9 @@
 <div id="padre"  class="contPadreFlex" style="width: 96%; margin: 2%; overflow:hidden;" >
     <div id="main" class=" styleLogin padd2" style="  margin: 2%;" >
         <div class="containerExt" style=" justify-content: center; display: flex; flex-direction: column;align-items: center;">
-              <h1 class="styleTitle center" >Bienvenido!</br> {{($name.' '.$lastName)}}</h1>
+              <h1 class="styleTitle center" >Bienvenido!</br> {{($user->name.' '.$user->lastName)}}</h1>
               <div id="containerLogo">
-                <img class=""src="{{$avatar}}" alt="Yo"style="  ">
+                <img class=""src="{{$user->avatar}}" alt="Yo"style="  ">
               </div>
         <div class="">
            <form class="" action="miPerfil" method="post" enctype="multipart/form-data" >
@@ -17,15 +17,15 @@
                  <p> </p>
 
 
-               <input type="text" class="form-control" id="user" placeholder="Enter user"   name="user" value="{{$user}}"  >
+               <input type="text" class="form-control" id="user" placeholder="Enter user"   name="user" value="{{$user->user}}"  >
                <p> </p>
-               <label  class="center" name="email"  ><strong> {{$email}}</strong> </label>
+               <label  class="center" name="email"  ><strong> {{$user->email}}</strong> </label>
                <p> </p>
 
-               <input type="text" class="form-control" id="name" placeholder="Enter name"   name="name" value="{{$name}}"  >
+               <input type="text" class="form-control" id="name" placeholder="Enter name"   name="name" value="{{$user->name}}"  >
                <p></p>
 
-               <input type="text" class="form-control" id="lastName" placeholder="Enter lastName"   name="lastName" value="{{$lastName}}" required>
+               <input type="text" class="form-control" id="lastName" placeholder="Enter lastName"   name="lastName" value="{{$user->lastName}}" required>
                <p></p>
 
                  <div class="" style="margin-bottom:2%">
