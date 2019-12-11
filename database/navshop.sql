@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.26, for Linux (x86_64)
 --
 -- Host: localhost    Database: navshop
--- -------------------------------------------------------
--- Server version	5.5.5-10.4.6-MariaDB
+-- ------------------------------------------------------
+-- Server version	5.7.26-0ubuntu0.18.10.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -80,12 +80,14 @@ CREATE TABLE `products` (
   `name` varchar(200) NOT NULL,
   `image` varchar(100) DEFAULT NULL,
   `category_id` varchar(45) DEFAULT NULL,
-  `stock` int(11) DEFAULT 0,
-  `description` longtext DEFAULT NULL,
+  `stock` int(11) DEFAULT '0',
+  `description` longtext,
   `price` decimal(10,0) DEFAULT NULL,
   `discount` decimal(10,0) DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -94,7 +96,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'Smart TV 50” 4K Ultra HD TCL L50P65',NULL,'1',5,'Este tele se la rebanca.Podes ver nefli y escuchar spotify. Si tu viejo es zapatero zarpale la lata!!!',39999,17),(2,'tele2',NULL,'1',1,'Este tele se la rebanca.Podes ver nefli y escuchar spotify. Si tu viejo es zapatero zarpale la lata!!!',39999,17),(3,'Cell 3',NULL,'2',1,'Este tele se la rebanca.Podes ver nefli y escuchar spotify. Si tu viejo es zapatero zarpale la lata!!!',39999,17),(4,'NB 54',NULL,'3',1,'Este tele se la rebanca.Podes ver nefli y escuchar spotify. Si tu viejo es zapatero zarpale la lata!!!',39999,17),(5,'celuuu',NULL,'2',1,'Este tele se la rebanca.Podes ver nefli y escuchar spotify. Si tu viejo es zapatero zarpale la lata!!!',39999,17),(6,'NOteb 1',NULL,'3',0,'Este tele se la rebanca.Podes ver nefli y escuchar spotify. Si tu viejo es zapatero zarpale la lata!!!',39999,17),(7,'Smart TV 50” 4K Ultra HD TCL L50P55',NULL,'1',1,'Este tele se la rebanca.Podes ver nefli y escuchar spotify. Si tu viejo es zapatero zarpale la lata!!!',55000,25);
+INSERT INTO `products` VALUES (1,'MONTOTOTV 50” 4K Ultra HD TCL L50P65','xrPuucnVCewsu4txTFgli4OrhqgTzDhg4qRLkAza.jpeg','1',70,'Este tele se la rebanca.Podes ver nefli y escuchar spotify. Si tu viejo es zapatero zarpale la lata!!!',52000,17,'2019-12-11 18:59:55',NULL),(2,'tele2',NULL,'1',1,'Este tele se la rebanca.Podes ver nefli y escuchar spotify. Si tu viejo es zapatero zarpale la lata!!!',39999,17,NULL,NULL),(3,'Cell 3',NULL,'2',1,'Este tele se la rebanca.Podes ver nefli y escuchar spotify. Si tu viejo es zapatero zarpale la lata!!!',39999,17,NULL,NULL),(4,'NB 54',NULL,'3',1,'Este tele se la rebanca.Podes ver nefli y escuchar spotify. Si tu viejo es zapatero zarpale la lata!!!',39999,17,NULL,NULL),(5,'celuuu',NULL,'2',1,'Este tele se la rebanca.Podes ver nefli y escuchar spotify. Si tu viejo es zapatero zarpale la lata!!!',39999,17,NULL,NULL),(6,'NOteb 1',NULL,'3',0,'Este tele se la rebanca.Podes ver nefli y escuchar spotify. Si tu viejo es zapatero zarpale la lata!!!',39999,17,NULL,NULL),(7,'Smart TV 50” 4K Ultra HD TCL L50P55',NULL,'1',1,'Este tele se la rebanca.Podes ver nefli y escuchar spotify. Si tu viejo es zapatero zarpale la lata!!!',55000,25,NULL,NULL),(8,'Smart TV 50” 4K Ultra HD TCL L50',NULL,'1',100,'Este tele se la rebanca.Podes ver nefli y escuchar spotify. Si tu viejo es zapatero zarpale la lata!!!',200,10,'2019-12-11 18:41:03',NULL);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -113,7 +115,7 @@ CREATE TABLE `users` (
   `email` varchar(255) NOT NULL,
   `password` varchar(100) NOT NULL,
   `avatar` varchar(100) CHARACTER SET latin1 DEFAULT NULL,
-  `create_time` timestamp NULL DEFAULT current_timestamp(),
+  `create_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `time_update` varchar(45) DEFAULT NULL,
   `is_admin` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -141,4 +143,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-12-02 16:38:27
+-- Dump completed on 2019-12-11 16:58:24
