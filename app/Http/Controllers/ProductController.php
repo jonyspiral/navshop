@@ -65,23 +65,24 @@ public function add(Request $req){
 public function loadFormEdit($id){
 
     $title='Editar Producto.';
-
-    $Userlog = Auth::user();
-    if ($Userlog==null){
-    $log= 'login';
-    $logTitle='Log in';
-    $avatar='/img/avatar/default.png';
-    }else{
-    $log= '/logout';
-    $logTitle='Log out';
-    $avatar='/img/avatar/'.$Userlog->avatar;
-    }
+    //
+    // $Userlog = Auth::user();
+    // if ($Userlog==null){
+    // $log= 'login';
+    // $logTitle='Log in';
+    // $avatar='/img/avatar/default.png';
+    // }else{
+    // $log= '/logout';
+    // $logTitle='Log out';
+    // $avatar='/img/avatar/'.$Userlog->avatar;
+    // }
 
     // $title=Category::find($id)->name;
     $categories=Category::all();
+    // var_dump($categories);exit;
     $product= Product::find($id);
 
-    return view('/layouts/editProduct',compact('title','categories','log','logTitle','avatar','product'));
+    return view('/layouts/editProduct',compact('title','categories','product'));
   }
 
   public function loadFormDetail($id){

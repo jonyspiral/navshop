@@ -32,85 +32,48 @@
   <form class=" flexCenterH" method="post" action="/editProduct/{{$product->id}}" style= "margin-top: 30px; " enctype="multipart/form-data">
   {{csrf_field()}}
   <div class="form-group">
-    <input   type="hidden" name="id" value="{{old($product->id)}}">
+    <input class ="form-control"  type="hidden" name="id" value="{{old($product->id)}}">
   <div>
       <label for="name">modelo</label>
-      <input    type="text" name="name" id="name" value="{{$product->name}}"/>
+      <input class ="form-control"   type="text" name="name" id="name" value="{{$product->name}}"/>
   </div>
   <div>
       <label for="image">imagen</label>
-      <input type="file" name="image" id="image" value="{{$product->image}}"/>
+      <input  class ="form-control" type="file" name="image" id="image" value="{{$product->image}}"/>
   </div>
-  <select>
-  <option value="volvo">Volvo</option>
-  <option value="saab">Saab</option>
-  <option value="mercedes">Mercedes</option>
-  <option value="audi">Audi</option>
-</select>
-  <div>
-      <label for="category_id">categoria</label>
-      @if ($product->category)
-        <input hidden   type="combo" name="category_id" value="{{$product->category_id}}"/>
-      @endif
+  <label   for="category">categoria</label>
+  <select class ="form-control" name="category_id" >
+    @foreach ($categories as $category)
+      @if($category->id==$product->category_id)
+       <option  value="{{$category->id}}" selected>{{$category->name}}</option> --}}
+     @else
+       <option  value="{{$category->id}}" >{{$category->name}}</option> --}}
+     @endif
+    @endforeach
 
-  </div>
+</select>
+
   <div>
       <label for="price">Precio venta</label>
-      <input  type="number" name="price" id="price"value="{{$product->price}}"/>
+      <input class ="form-control" type="number" name="price" id="price"value="{{$product->price}}"/>
   </div>
   <div>
       <label for="discount"> Descuento</label>
-      <input type="number" name="discount" id="discount"value="{{$product->discount}}"/>
+      <input class ="form-control" type="number" name="discount" id="discount"value="{{$product->discount}}"/>
   </div>
   <div>
       <label   for="stock">Stock</label>
-      <input  type="number" name="stock" id="stock"value="{{$product->stock}}"/>
+      <input class ="form-control"  type="number" name="stock" id="stock"value="{{$product->stock}}"/>
   </div>
   <div>
       <label for="description">Descripcion</label>
-      <input type="text" name="description" id="description" value="{{$product->description}}"/>
+      <input class ="form-control" type="text" name="description" id="description" value="{{$product->description}}"/>
   </div>
 
 <input type="submit" value="guardar" name="guardar"href=""/>
-<input type="submit" value="cerrar" name="cerrar" href=""/>
+<a type="submit" value="cerrar" name="cerrar" href="/categoryList/{{$product->category_id}}"/>cerrar</a>
 </form>
-      {{-- <form class="  flexCenterH" method="post" action="/addProduct" style= "margin-top: 30px; " enctype="multipart/form-data">
-        {{csrf_field()}}
-        {{-- <input type="hidden" name="id" value="">
 
-            <div>
-                <label for="name">modelo</label>
-                <input type="text" name="name" id="name" value="{{old('name')}}"/>
-            </div>
-            <div>
-                <label for="image">imagen</label>
-                <input type="file" name="image" id="image" value="{{old('image')}}"/>
-            </div>
-            <div>
-                <label for="category_id">categoria</label>
-                <input type="text" name="category_id" value="{{$Product->category->id}}"id="category_id"/>
-            </div>
-
-            <div>
-                <label for="stock">Stock</label>
-                <input type="number" name="stock" id="stock" value="{{old('stock')}}"/>
-            </div>
-
-            <div>
-                <label for="description">Descripcion</label>
-                <input type="text" name="description" id="description"value="{{old('description')}}"/>
-            </div>
-            <div>
-                <label for="price">Precio venta</label>
-                <input type="number" name="price" id="price"value="{{old('price')}}"/>
-            </div>
-            <div>
-                <label for="discount"> Descuento</label>
-                <input type="number" name="discount" id="discount"{{old('discount')}}/>
-            </div>
-
-            <input type="submit" value="Agregar producto" name="submit"/>
-        </form> --}}
 </div>
 </div>
 @endsection
