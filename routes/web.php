@@ -30,7 +30,7 @@ Route::get('/editProduct/{id}','ProductController@loadFormEdit');
 Route::post('/editProduct/{id}','ProductController@update');
 Route::post('/deleteProduct','ProductController@delete');
 
-Route::get('/miPerfil','MiPerfilController@toMiPerfil');
+Route::get('/profile','profileController@show');
 // Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('/logout', function(){
    Auth::logout();

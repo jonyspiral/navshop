@@ -5,15 +5,16 @@
 @endsection
 @section('main')
 <div id="padre"  class="contPadreFlex" style="width: 96%; margin: 2%; overflow:hidden;" >
-    <div id="main" class=" styleLogin padd2" style="  margin: 2%;" >
-        <div class="containerExt" style=" justify-content: center; display: flex; flex-direction: column;align-items: center;">
+
+        <div id="img" class=" styleLogin padd2" style=" justify-content: center; display: flex; flex-direction: column;align-items: center;">
               <h1 class="styleTitle center" >Bienvenido!</br> {{($user->name.' '.$user->lastName)}}</h1>
               <div id="containerLogo">
-                <img class=""src="{{$user->avatar}}" alt="Yo"style="  ">
+                <img class=""src="/storage/{{$user->avatar}}" alt="Yo"style="  ">
+              </div>
               </div>
         <div class="">
-           <form class="" action="miPerfil" method="post" enctype="multipart/form-data" >
-                 <input type="file" accept="img\avatar\" name="avatar"  class=" borderRadiusUp file-input" id="avatar"style="width:100%;">
+           <form class="" action="profile" method="post" enctype="multipart/form-data" >
+                 <input type="file" accept="" name="avatar"  class=" borderRadiusUp file-input" id="avatar"style="width:100%;">
                  <p> </p>
 
 
@@ -33,11 +34,7 @@
                    <button class="center btn-primary btn"  type="submit" style="width:300px;">Enviar cambios</button>
                  </div>
 
-             </form>
-        </div>
-        <div class="">
-          <form method='post' >
-                   <td><input class="form-control" name='password' type='password'  placeholder="Enter password"/></td>
+                       <td><input class="form-control" name='password' type='password'  placeholder="Enter password"/></td>
                    <p> </p>
                <tr>
 
@@ -52,7 +49,7 @@
                    <p> </p>
                </tr>
                 </form>
-      </div>
+
 
            <div class="">
                  <ul class="center" style="padding-inline-start: 0px;">
@@ -70,6 +67,6 @@
            </div>
 
    </div>
-</div>
+
 </div>
 @endsection
