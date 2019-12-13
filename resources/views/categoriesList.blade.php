@@ -20,7 +20,7 @@
                    <li class="breadcrumb-item ">
                        <a href="peliculas.php?order=rating">descuento</a>
                    </li>
-                   
+
                  </ol>
 
                 </div>
@@ -42,7 +42,7 @@
                <h6 class="center" style=" ">{{$product->name}}</h6>
              </div>
               <div id="imagenCard" class="contPadreFlex" style="height:300px;">
-                              <img id="" src="/storage/{{$product->image}}" class="" style="width: 100%;border-radius: 15px;" alt="">
+                              <img id="" src="/storage/products/{{$product->image}}" class="" style="width: 100%;border-radius: 15px;" alt="">
                </div>
                <div id="containerButton"class="center" style="">
 

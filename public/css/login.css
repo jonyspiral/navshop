@@ -1,25 +1,21 @@
 #containerLogo{
-  display: flex;
-    border-radius: 15%;
-    width: 200px;
-    overflow: hidden;
-    margin-right: auto;
-      margin-left: auto;
-
-
-  display: -ms-flexbox;
-  display: -webkit-flex;
+  display: contents;
+  border-radius: 15%;
+  width: 200px;
+  overflow: hidden;
+  margin-right: auto;
+  margin-left: auto;
   justify-content: center
 
 }
 #logo img{
-width: 150px;
-
+min-width: 150px;
+max-width: 300px
 
 }
 #padre{
-  width:100%;
-
+  width:96%;
+flex-direction: column;
   margin: 2%;
 }
 #main{
@@ -41,7 +37,8 @@ form {
   text-align: center;
 }
 label{
-float:left;
+
+
    font-size: 1em;
   text-align: center;
 

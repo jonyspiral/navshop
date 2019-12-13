@@ -6,9 +6,9 @@
   <div class="containerExt styleLogin" style="margin-top:90px; display:flex;" >
       <div class="form-group" style="display: contents;">
         @if (isset($req))
-          <img src="/storage/{{$req->image}}" alt="" class="navbar-brand" style="width: 50%; border-radius: 5%; margin-right: 9%; margin-left: 1%;"  >
+          <img src="/storage/products/{{$req->image}}" alt="" class="navbar-brand" style="width: 50%; border-radius: 5%; margin-right: 9%; margin-left: 1%;"  >
 @else
-  <img src="/storage/default.png" alt="" class="navbar-brand" style="width: 50%; border-radius: 5%; margin-right: 9%; margin-left: 1%;"  >
+  <img src="/storage/products/default.png" alt="" class="navbar-brand" style="width: 50%; border-radius: 5%; margin-right: 9%; margin-left: 1%;"  >
 
         @endif
       </div>

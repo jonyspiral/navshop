@@ -6,7 +6,7 @@
 
 <div class="containerExt styleLogin" style="margin-top:90px; display:flex;" >
     <div class="form-group" style="display: contents;">
-        <img src="/storage/{{$product->image}}" alt="" class="navbar-brand" style="width: 50%; border-radius: 5%; margin-right: 9%; margin-left: 1%;"  >
+        <img src="/storage/products/{{$product->image}}" alt="" class="navbar-brand" style="width: 50%; border-radius: 5%; margin-right: 9%; margin-left: 1%;"  >
     </div>
         <form class=" flexCenterH" method="post" action="/addProduct" style= "margin-top: 30px; " enctype="multipart/form-data">
           {{csrf_field()}}
