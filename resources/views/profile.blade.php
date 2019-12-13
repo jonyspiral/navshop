@@ -5,20 +5,19 @@
 @endsection
 @section('main')
 <div id="padre"  class="contPadreFlex" style=" margin-top:90px; overflow:hidden;">
-  <div class=" padd2">
+  <div class=" padd2"style=" display:contents;">
     <h1 class="styleTitle center">Bienvenido!</br> {{($user->name.' '.$user->lastName)}}</h1>
   </div>
     <div  class="contPadreFlex center" style=" max-width:200px; " >
-
-            <div id="img" class=" styleLogin padd2" style=" justify-content: center; display: flex; flex-direction: column;align-items: center;">
+            <div id="img" class=" styleLogin padd2 center" style=" margin-bottom:2%; j display: flex; flex-direction: column;">
                   <div id="containerLogo">
                     @if ($user->avatar)
                       <img class=""src="/storage/avatar/{{$user->avatar}}" alt="Yo"style="  ">
                     @else
                       <img class=""src="/storage/avatar/default.png" alt="Yo"style="  ">
                     @endif
-                    <input type="file" accept="" name="avatar"  class=" borderRadiusUp file-input" id="avatar"style="width:100%;">
                   </div>
+    <input type="file" accept="" name="avatar"  class=" borderRadiusUp file-input" id="avatar"style="width:100%;">
             </div>
 
 

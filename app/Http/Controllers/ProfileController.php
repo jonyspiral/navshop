@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 class ProfileController extends Controller
 {
-public function add(){
+public function update(){
       if (!Auth::user()) {
         return redirect("login");
       }else {
