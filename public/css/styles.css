@@ -30,5 +30,8 @@ border: solid 2px #007bff85;
   margin-bottom: 1%;
   border: solid 2px #007bff85;
     background-color: #b3d7ff5c;
-
   }
+  .responsive {
+  width: 100%;
+  height: auto;
+}

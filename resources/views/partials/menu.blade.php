@@ -14,14 +14,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
              @include('/partials/categoriesMenu')
-
-
               <div class=""style="width: fit-content;  padding: 3px; border-radius: .25rem; border-width: thin; border-color: white;border-style: solid;
                     display: flex;overflow: hidden; ">
-
-                    <a class="navbar-brand" style="width: 60px; text-align:center; "  target="_blank" href="{{Auth::user() ? url('logout') : url('login')}}">{{Auth::user() ? 'LOGOUT' : 'LOGIN'}}</a>
-                    <a href="{{url('profile')}}" id="containerLogo" style="width:auto;display: -webkit-flex;">
-                    <img href="{{url('profile')}}"; class=""  style="width:50px;border-radius:15%;"src="/storage/avatar/{{Auth::user()->avatar ?? 'default.png'}}" alt="Yo"style=" ">
+                    <a class="navbar-brand" style="width: 60px; text-align:center; "  target="_blank" href="{{Auth::user() ? url('logout') : url('login')}}">{{Auth::user() ? 'Log out' : 'Log in'}}</a>
+                    <a href="{{url('editProfile')}}" id="containerLogo" style="width:auto;display: -webkit-flex;">
+                    <img href="{{url('editProfile')}}"; class=""  style="width:50px;border-radius:15%;"src="/storage/avatar/{{Auth::user()->avatar ?? 'default.png'}}" alt="Yo"style=" ">
                     </a>
               </div>
                     <form class="center  form-inline my-2 my-lg-0" style="width:auto;">

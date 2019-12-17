@@ -125,8 +125,13 @@
 
   }
   }
-  @media only screen and (min-width:768px) {
-
+  /* @media only screen and (min-width:768px)  */
+    @media (min-width: 768px){
+    .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 100%;
+    }
     .card{
       width: 49%;
     margin: 0.5%;

@@ -8,29 +8,13 @@ use App\Product;
 use App\Category;
 class ProductController extends Controller
 {
-  public function loadForm($id){
+public function loadAdd($id){
+      $title='Editar Producto.';
 
-    $title='Agrega Productos.';
 
-    $Userlog = Auth::user();
-    if ($Userlog==null){
-    $log= '/auth/login';
-    $logTitle='Log in';
-    $avatar='/img/avatar/default.png';
-    }else{
-    $log= '/logout';
-    $logTitle='Log out';
-    $avatar='/img/avatar/'.$Userlog->avatar;
-    }
-    // $title=Category::find($id)->name;
-    $categories=Category::all();
-
-    return view('layouts/addProduct',compact('title','categories','log','logTitle','avatar','id'));
-  }
-
+return view('/addProduct',compact('title','id'));
+}
 public function add(Request $req){
-  $errores='';
-
   $reglas=[
     "name"=>"string|unique:products,name|min:5",
     "imagen"=>"file",
@@ -63,52 +47,23 @@ public function add(Request $req){
 }
 // Editar
 public function loadFormEdit($id){
-
-    $title='Editar Producto.';
-    //
-    // $Userlog = Auth::user();
-    // if ($Userlog==null){
-    // $log= 'login';
-    // $logTitle='Log in';
-    // $avatar='/img/avatar/default.png';
-    // }else{
-    // $log= '/logout';
-    // $logTitle='Log out';
-    // $avatar='/img/avatar/'.$Userlog->avatar;
-    // }
-
-    // $title=Category::find($id)->name;
+      $title='Editar Producto.';
     $categories=Category::all();
-    // var_dump($categories);exit;
     $product= Product::find($id);
+    // dd($product);
 
-    return view('/layouts/editProduct',compact('title','categories','product'));
+    return view('/editProduct',compact('title','categories','product'));
   }
 
-  public function loadFormDetail($id){
+  public function show($id){
 
     $title='Detalle del Producto.';
-
-    $Userlog = Auth::user();
-    if ($Userlog==null){
-    $log= 'login';
-    $logTitle='Log in';
-    $avatar='/img/avatar/default.png';
-    }else{
-    $log= '/logout';
-    $logTitle='Log out';
-    $avatar='/img/avatar/'.$Userlog->avatar;
-    }
-
-    // $title=Category::find($id)->name;
     $categories=Category::all();
     $product= Product::find($id);
-    return view('detail',compact('title','categories','log','logTitle','avatar','id','product'));
+    return view('detailProduct',compact('title','categories','product'));
   }
 
   public function update($id, Request $req){
-    $errores='';
-
     $reglas=[
       "name"=>"string|unique:products,id,".$id."|min:5",
       "imagen"=>"file",

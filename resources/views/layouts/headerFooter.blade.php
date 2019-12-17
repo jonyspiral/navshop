@@ -37,7 +37,7 @@
     <a class="nav-link" href="faqs">FAqs</a>
     </li>
     <li class="nav-item active"style="">
-    <a class="nav-link" href="miPerfil" >Mi Perfil</a>
+    <a class="nav-link" href="{{ url('editProfile') }}" >Mi Perfil</a>
     </li>
     <li class="nav-item active"style="">
     <img src="/img\f_logo_RGB-White_72.png"style="width: 50px">      </li>

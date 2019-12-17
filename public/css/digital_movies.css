@@ -106,9 +106,9 @@ a.logo img{
 }
 
 
-article{
+/* article{
   margin-bottom: 20px;
-}
+} */
 
 h2{
 justify-content: space-between;
@@ -187,7 +187,7 @@ select, option{
     color:black;
 }
 
-@media( max-width:768px ){
+/* @media( max-width:768px ){
   .container{
     width: 100vw;
     margin-top: -40px;
@@ -219,7 +219,7 @@ select, option{
   }
 
   #menu-check:checked ~ .navigation{
-    /*display: block;*/
+
     top: 50px;
     right: 0;
   }
@@ -252,7 +252,7 @@ select, option{
     background-color: rgba(24,24,24,.9);
     width: 300px;
     text-align:right;
-    /* display: none; */
+
   }
   .container nav ul li{
     display: block;
@@ -281,4 +281,4 @@ select, option{
     bottom: 50px;
   }
 
-}
+} */

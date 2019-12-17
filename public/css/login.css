@@ -9,6 +9,14 @@ max-width: 100%;
   justify-content: center
 
 }
+div{
+  /* border: solid; */
+}
+ div img{
+    border-radius: 5%;
+
+  }
+
 #logo img{
 min-width: 150px;
 max-width: 300px
@@ -24,8 +32,44 @@ width: fit-content;
   margin: 2%;
 
 }
-form {
+.containerFlex {
+  display:flex;
+  flex-direction: column;
+  min-height:100%;
+}
+
+.containerFlex > div{
+  flex:1;
+  display:flex;
+  justify-content: center;
+  flex-flow: wrap;
+}
+.form-group {
+  padding: 2%;
+  margin:auto;
   flex-flow:column;
+  min-width: 200px;
+
+  }
+.form-group  input {
+    width:100%;
+    text-align:center;
+}
+.form-group  select {
+    width:100%;
+}
+.form-group  label {
+  padding-left: 2%;
+    margin-bottom: 0;
+    /* background-color: green; */
+    width: 100%;
+    font-size: 1em;
+}
+.form-group  textarea {
+  padding-left: 2%;
+    margin-bottom: 0;
+   width: 100%;
+    font-size: 1em;
 }
 .form-check {
     margin:5%;
@@ -33,18 +77,31 @@ form {
     display: block;
     padding-left: 1.25rem;
 }
+
+.formControl {
+    font-size: 1.5em;
+    width: 300px;
+    border-radius: 0.5rem;
+    background-color: white;
+
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+
+    border: 1px solid #ced4da;
+
+}
+
 #toRegister{
   font-size: 1em;
   text-align: center;
 }
-label{
-
-
-   font-size: 1em;
-  text-align: center;
-
-}
-
 body{
   height: -webkit-fill-available;
     display: flex;
@@ -68,34 +125,6 @@ ul{
 
 input {
   float:left;
-    font-size: 1.5em;
-    width: 300px;
-    border-radius: 0.5rem;
-    background-color: white;
-
-    display: block;
-    width: 100%;
-    height: calc(1.5em + .75rem + 2px);
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #495057;
-    background-color: #fff;
-
-    border: 1px solid #ced4da;
-
-}
-form div {
-flex-direction: column;
-display: flex;
-display: -ms-flexbox;
-display: -webkit-flex;
-justify-content: center;
-align-items: center;
-
-}
-.formControl {
     font-size: 1.5em;
     width: 300px;
     border-radius: 0.5rem;

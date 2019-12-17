@@ -7,7 +7,7 @@
 @section('main')
 
         <div class="" style="margin-top:90px">
-            <h2 class="titulo-nav">
+            <h2 class="titulo-nav" style="margin-bottom: auto;">
 
                 <div class=""style="display: -webkit-box; font: -webkit-control;">
                   <ol class="breadcrumb">
@@ -24,7 +24,7 @@
                  </ol>
 
                 </div>
-                <nav >
+                <nav style="margin-bottom: 0%;">
                   {{-- pagination --}}
                   {{$products->links()}}
                 </nav>
@@ -41,14 +41,28 @@
              <div class="container center">
                <h6 class="center" style=" ">{{$product->name}}</h6>
              </div>
-              <div id="imagenCard" class="contPadreFlex" style="height:300px;">
-                              <img id="" src="/storage/products/{{$product->image}}" class="" style="width: 100%;border-radius: 15px;" alt="">
+              <div id="imagenCard" class="contPadreFlex" style="">
+                @if (!$product->image)
+                  <div class=""  style="width:100%;border-radius: 15px;height:300px;">
+                        Imagen No Disponible
+                  </div>
+                  {{-- <img id="" src="/storage/products/default.png" class="" style="width: 100%;border-radius: 15px;" alt=""> --}}
+                @else
+                  <img id="" src="/storage/products/{{$product->image}}" class="" style="width: 100%;border-radius: 15px;" alt="">
+
+                @endif
                </div>
                <div id="containerButton"class="center" style="">
+                 <form action="/deleteProduct" method="post" id= "controlBox" class="card-text" style="display:contents;">
+                     {{csrf_field()}}
+                     <input type="hidden" name="id" value="{{$product->id}}">
+                   <a type="submit" class="btn btn-primary" href="/editProduct/{{$product->id}}">E</a>
+                   <input type="submit"name="borrar" class="btn btn-success" href="/deleteProduct" value="-">
+                 </form >
+                    <a id="buttonCard1" href="cart" class=" btn btn-primary buttonCard btn-lg active " role="button" aria-pressed="true"><img src="https://img.icons8.com/ios-filled/50/000000/add-shopping-cart.png"></a>
+                    <a id="buttonCard1" href="/detailProduct/{{$product->id}}" target="_blank" class=" btn btn-primary btn-lg active" role="button" aria-pressed="true" style="cursor: zoom-in"><img  src="https://img.icons8.com/ios-filled/50/000000/zoom-to-extents.png"></a>
 
-                         <a id="buttonCard1" href="cart" class=" btn btn-primary buttonCard btn-lg active " role="button" aria-pressed="true"><img src="https://img.icons8.com/ios-filled/50/000000/add-shopping-cart.png"></a>
-                         <a id="buttonCard1" href="/detail/{{$product->id}}" target="_blank" class=" btn btn-primary btn-lg active" role="button" aria-pressed="true" style="cursor: zoom-in"><img  src="https://img.icons8.com/ios-filled/50/000000/zoom-to-extents.png"></a>
-                         <img id="cuotas" src="/img/12cuotas.png" alt="12-cuotas-sin-interes" style="">
+                    <img id="cuotas" src="/img/12cuotas.png" alt="12-cuotas-sin-interes" style="">
                </div>
                <div id="containerPrice" class="center" style="">
                   <span class="priceOld dollars">{{$product->price}}</span>

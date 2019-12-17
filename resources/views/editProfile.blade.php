@@ -1,4 +1,3 @@
-
 @extends('layouts/headerFooter')
 @section('css')
   <link rel="stylesheet" href="/css/login.css">
@@ -17,23 +16,58 @@
                       <img class=""src="/storage/avatar/default.png" alt="Yo"style="  ">
                     @endif
                   </div>
-    <input type="file" accept="" name="avatar"  class=" borderRadiusUp file-input" id="avatar"style="width:100%;">
-            </div>
 
-
-             <form class="" action="profile" method="post" enctype=" multipart/form-data" >
+                    </div>
+             <form class="" action="editProfile" method="post" enctype=" multipart/form-data" >
+                   {{csrf_field()}}
+                     <input type="file" accept="" name="avatar"  class=" borderRadiusUp file-input" id="avatar"style="width:100%;" value="{{$user->avatar}}">
                    <label  class="center" name="email"><strong> {{$user->email}}</strong> </label>
-                   <input type="text" class="form-control" id="name" placeholder="Enter name"   name="name" value="{{$user->name}}"  >
-                   <input type="text" class="form-control" id="lastName" placeholder="Enter lastName"  name="lastName" value="{{$user->lastName}}" required>
-                  <input class="form-control" name='password' type='password'  placeholder="Enter password"/>
-                  <input class="form-control" name='newPass' type='password'   placeholder="Enter new password"/>
-                  <input class="form-control" name='confirmPassword' type='password'  placeholder="Confirm new password"/>
+                   <div class="form-group row">
+                       <div class="col-md-6">
+                           <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
+                             name="name" value="{{$user->name}}"  placeholder="{{ __('Name') }}"autofocus>
+                           @error('name')
+                               <span class="invalid-feedback" role="alert">
+                                   <strong>{{ $message }}</strong>
+                               </span>
+                           @enderror
+                       </div>
+                   </div>
+                   <div class="form-group row">
+                       <div class="col-md-6">
+                           <input id="lastName" type="text" class="form-control @error('lastName') is-invalid @enderror"
+                             name="lastName" value="{{$user->lastName}}"  autocomplete="lastName" placeholder="{{ __('lastName') }}"autofocus>
+                           @error('lastName')
+                               <span class="invalid-feedback" role="alert">
+                                   <strong>{{ $message }}</strong>
+                               </span>
+                           @enderror
+                       </div>
+                   </div>
+
+
+                  {{-- <div class="form-group row">
+                      <div class="col-md-6">
+                          <input id="password" type="password" class="form-control @error('password') is-invalid @enderror"
+                            name="password"  autocomplete="new-password"placeholder="{{ __('Password') }}">
+                          @error('password')
+                              <span class="invalid-feedback" role="alert">
+                                  <strong>{{ $message }}</strong>
+                              </span>
+                          @enderror
+                      </div>
+                  </div>
+                    <input class="form-control" name='newPass' type='password'   placeholder="Enter new password"/>
+                    <div class="form-group row" >
+                        <div class="col-md-6">
+                            <input id="password-confirm" type="password" class="form-control"
+                            name="password_confirmation"  autocomplete="new-password" placeholder="{{ __('Confirm Password') }}">
+                        </div>
+                    </div> --}}
              <div class="center">
                <input class="center btn-primary btn" type='submit' value='enviar cambios'style="min-width: 200px;" />
              </div>
                </form>
     </div>
   </div>
-
-
 @endsection

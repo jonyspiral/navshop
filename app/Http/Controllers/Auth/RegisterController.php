@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -49,13 +49,12 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'avatar' => ['max:255'],
+            'avatar' => ['nullable','image'],
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
-            'user'=> ['required', 'string', 'max:255','unique:users'],
           'lastName'=> ['required', 'string', 'max:255'],
-          'is_admin'=> [ 'boolean'],
+          'is_admin'=> [ 'boolean' , 'nullable'],
         ]);
     }
 
@@ -65,16 +64,27 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
+
     protected function create(array $data)
     {
+      $ruta='';
+      if (isset($data['avatar'])) {
+        $ruta= $data['avatar']->store('public/avatar');
+        $ruta=basename($ruta);
+      }
+
         return User::create([
-            'avatar'=> $data['avatar'],
+            'avatar'=> $ruta,
             'name' => $data['name'],
+            'lastName'=> $data['lastName'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'user'=> $data['user'],
-          'lastName'=> $data['lastName'],
           'is_admin'=> $data['is_admin'],
         ]);
+    }
+    public function showRegistrationForm(){
+      $title = "unetenos";
+
+      return view('register',compact('title',));
     }
 }
