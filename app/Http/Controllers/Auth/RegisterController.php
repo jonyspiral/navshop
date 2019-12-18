@@ -70,6 +70,7 @@ class RegisterController extends Controller
       $ruta='';
       if (isset($data['avatar'])) {
         $ruta= $data['avatar']->store('public/avatar');
+        dd($ruta);
         $ruta=basename($ruta);
       }
 
@@ -84,7 +85,8 @@ class RegisterController extends Controller
     }
     public function showRegistrationForm(){
       $title = "unetenos";
-
       return view('register',compact('title',));
     }
+    
+
 }

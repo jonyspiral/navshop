@@ -18,9 +18,22 @@
                   </div>
 
                     </div>
-             <form class="" action="editProfile" method="post" enctype=" multipart/form-data" >
-                   {{csrf_field()}}
-                     <input type="file" accept="" name="avatar"  class=" borderRadiusUp file-input" id="avatar"style="width:100%;" value="{{$user->avatar}}">
+             <form class="" action="editProfile" method="post" enctype="multipart/form-data" >
+                   @csrf
+
+
+                     {{-- <input type="file" accept="" name="avatar"  class=" borderRadiusUp file-input" id="avatar"style="width:100%;" value="{{$user->avatar}}"> --}}
+                     <div class="form-group row">
+                         <div class="col-md-6">
+                             <input id="avatar" type="file" class="form-control @error('avatar') is-invalid @enderror" name="avatar"value="{{$user->avatar}}"  autofocus>
+                             @error('avatar')
+                                 <span class="invalid-feedback" role="alert">
+                                     <strong>{{ $message }}</strong>
+                                 </span>
+                             @enderror
+                         </div>
+                     </div>
+
                    <label  class="center" name="email"><strong> {{$user->email}}</strong> </label>
                    <div class="form-group row">
                        <div class="col-md-6">
@@ -46,7 +59,7 @@
                    </div>
 
 
-                  {{-- <div class="form-group row">
+                  <div class="form-group row">
                       <div class="col-md-6">
                           <input id="password" type="password" class="form-control @error('password') is-invalid @enderror"
                             name="password"  autocomplete="new-password"placeholder="{{ __('Password') }}">
@@ -57,13 +70,17 @@
                           @enderror
                       </div>
                   </div>
-                    <input class="form-control" name='newPass' type='password'   placeholder="Enter new password"/>
+                    <div class="form-group row" >
+                        <div class="col-md-6">
+                      <input class="form-control" name='newPass' type='password'   placeholder="Enter new password"/>
+                        </div>
+                    </div>
                     <div class="form-group row" >
                         <div class="col-md-6">
                             <input id="password-confirm" type="password" class="form-control"
-                            name="password_confirmation"  autocomplete="new-password" placeholder="{{ __('Confirm Password') }}">
+                            name="password_confirmation"   placeholder="{{ __('Confirm Password') }}">
                         </div>
-                    </div> --}}
+                    </div>
              <div class="center">
                <input class="center btn-primary btn" type='submit' value='enviar cambios'style="min-width: 200px;" />
              </div>

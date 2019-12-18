@@ -37,9 +37,10 @@ Route::post('/deleteProduct','ProductController@delete')->middleware(['auth', 'i
 
 
 
-Route::get('/editProfile','profileController@edit')->middleware('auth');
+Route::get('/editProfile','ProfileController@edit')->middleware('auth');
+Route::post('/editProfile','ProfileController@update')->middleware('auth');
 
-Route::post('/editProfile','profileController@update')->middleware('auth');
+// Route::put('/editProfile','profileController@update')->middleware('auth');
 
 // Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('/logout', function(){

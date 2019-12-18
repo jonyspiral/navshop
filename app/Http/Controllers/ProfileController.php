@@ -2,21 +2,42 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Auth;
+
+use Illuminate\Support\Facades\Validator;
 use App\User;
+use Auth;
 class ProfileController extends Controller
 {
   public function update( Request $req){
-
+    $ruta='';
+    $user=Auth::user();
     $reglas=[
           'name' => 'required|string|max:255',
           'lastName'=> 'required|string|max:255',
-          'email' => 'required|string|email|max:255|unique:users',
-          'password' => 'required|min:6|confirmed|string',
-          'avatar' => 'max:255',
-          'is_admin'=> 'boolean|nullable'
-      ];
+          'avatar' => ['nullable','image'],
+          // 'is_admin'=> 'boolean|nullable'
+          ];
+        if (isset($req['newPass'])) {
+          $reglas['password']= 'required|string';
+          $reglas['newPass'] = 'min:6|string|confirmed';
+          $reglas['password_confirmation'] = 'required|same:password' ;
+          $validaNewPass = Validator::make($req->all(),$reglas);
+              if ($validaNewPass->fails()) {
+              // echo'estoy aca';
+                    $validaPass = Validator::make($req->all(),[
+                      'password'=> 'required|confirmed |string'
+
+                    ]);                // redirect('post/create')
+                  if (!$validaPass->fails()){
+return 'llego a la ultima valida';
+                    $user->password = bcrypt($req['password']);
+                    dd($user);
+                  }
+              }
+      }
       $mensajes=[
         "string"=>"el campo :attribute debe ser un texto",
         "unique"=>"el campo :attribute ya existe.",
@@ -25,28 +46,22 @@ class ProfileController extends Controller
         "numeric"=>"el campo :attribute debe ser un numero",
         "date"=>"el campo :attribute deber ser fecha"
       ];
-      $ruta='';
-      $fileName=  '';
-      $user=  User::find( Auth::user()->id);
 
-  
-      $this->validate($req,$reglas,$mensajes);
-      if (isset($data['avatar'])) {
-        $ruta= $data['avatar']->store('public/avatar');
+  $this->validate($req,$reglas,$mensajes);
+
+      if (isset($req['avatar'])) {
+        $ruta= $req['avatar']->store('public/avatar');
         $fileName=basename($ruta);
-
+        $user->avatar =$fileName;
       }
-        $user=  User::find( Auth::user()->id);
-        dd($user);
-        // return 'aca estoy';
-      $user->name = $req['name'];
+        $user->name = $req['name'];
       $user->lastName = $req['lastName'];
-      // $user->password = bcrypt($req['password']);
-      $user->avatar =$fileName;
+  return'ahora estoy aca che';
       $user->save();
       return back();
           // return redirect()->back();
 }
+
 public function edit(){
       $user = Auth::user();
       $title='Mi Perfil';
