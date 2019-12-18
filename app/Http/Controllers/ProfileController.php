@@ -12,34 +12,32 @@ use Auth;
 class ProfileController extends Controller
 {
   public function update( Request $req){
-  $validaPass = Validator::make($req->all(), [
-        'password' => 'required|string',
-        'newPass' => 'min:6|string|confirmed',
-        'password_confirmation' => 'required|same:password'
-        ]);
-
-        if ($validaPass->fails()) {
-return "cagamos";
-                // redirect('post/create')
-                //             ->withErrors($validator)
-                //             ->withInput();
-            }
-
+    $ruta='';
+    $user=Auth::user();
     $reglas=[
           'name' => 'required|string|max:255',
           'lastName'=> 'required|string|max:255',
-
-
-        'avatar' => ['nullable','image'],
+          'avatar' => ['nullable','image'],
           // 'is_admin'=> 'boolean|nullable'
-      ];
-      if (isset($req['newPass'])) {
-        $reglas['password']= 'required|string';
-        $reglas['newPass'] = 'min:6|string|confirmed';
+          ];
+        if (isset($req['newPass'])) {
+          $reglas['password']= 'required|string';
+          $reglas['newPass'] = 'min:6|string|confirmed';
+          $reglas['password_confirmation'] = 'required|same:password' ;
+          $validaNewPass = Validator::make($req->all(),$reglas);
+              if ($validaNewPass->fails()) {
+              // echo'estoy aca';
+                    $validaPass = Validator::make($req->all(),[
+                      'password'=> 'required|confirmed |string'
 
-        $reglas['password_confirmation'] = 'required|same:password' ;
+                    ]);                // redirect('post/create')
+                  if (!$validaPass->fails()){
+return 'llego a la ultima valida';
+                    $user->password = bcrypt($req['password']);
+                    dd($user);
+                  }
+              }
       }
-      // dd($reglas);
       $mensajes=[
         "string"=>"el campo :attribute debe ser un texto",
         "unique"=>"el campo :attribute ya existe.",
@@ -49,40 +47,21 @@ return "cagamos";
         "date"=>"el campo :attribute deber ser fecha"
       ];
 
-      $ruta='';
-
-
-  $user=Auth::user();
-  // $this->validate($req,$reglas,$mensajes);
-
-  if ($this->validate($req,$reglas,$mensajes)->fails()) {
-          return 'cagamos';
-          // redirect('post/create')
-          //             ->withErrors($validator)
-          //             ->withInput();
-      }
+  $this->validate($req,$reglas,$mensajes);
 
       if (isset($req['avatar'])) {
         $ruta= $req['avatar']->store('public/avatar');
         $fileName=basename($ruta);
         $user->avatar =$fileName;
       }
-      // if (isset($req['password'])){
-      //     if (===$user->password && $req['newPass']=== $req['password_confirmation']) {
-      //       // code...
-      //     }
-      //     }
-      // }
-      // // dd($req);exit;
-      $user->name = $req['name'];
+        $user->name = $req['name'];
       $user->lastName = $req['lastName'];
-      // $user->password = bcrypt($req['password']);
-
-
+  return'ahora estoy aca che';
       $user->save();
       return back();
           // return redirect()->back();
 }
+
 public function edit(){
       $user = Auth::user();
       $title='Mi Perfil';
