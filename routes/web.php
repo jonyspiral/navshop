@@ -35,14 +35,13 @@ Route::post('/editProduct/{id}','ProductController@update')->middleware(['auth',
 
 Route::post('/deleteProduct','ProductController@delete')->middleware(['auth', 'is_admin']);
 
-
-
 Route::get('/editProfile','ProfileController@edit')->middleware('auth');
 Route::post('/editProfile','ProfileController@update')->middleware('auth');
 
-// Route::put('/editProfile','profileController@update')->middleware('auth');
+Route::get('cart','CartController@show');
+Route::post('addCart','CartController@add');
 
-// Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
 Route::get('/logout', function(){
    Auth::logout();
    return Redirect::to('login');

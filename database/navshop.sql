@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.26, for Linux (x86_64)
 --
 -- Host: localhost    Database: navshop
 -- ------------------------------------------------------
--- Server version	5.5.5-10.4.6-MariaDB
+-- Server version	5.7.26-0ubuntu0.18.10.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -23,13 +23,15 @@ DROP TABLE IF EXISTS `carts`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `carts` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
-  `quantify` varchar(45) NOT NULL,
-  `price` varchar(45) NOT NULL,
-  `state` int(11) DEFAULT NULL,
-  PRIMARY KEY (`product_id`,`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `quantify` int(11) NOT NULL,
+  `state` int(11) DEFAULT '1',
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,6 +40,7 @@ CREATE TABLE `carts` (
 
 LOCK TABLES `carts` WRITE;
 /*!40000 ALTER TABLE `carts` DISABLE KEYS */;
+INSERT INTO `carts` VALUES (5,1,1,2,1,NULL,NULL),(6,1,2,1,1,NULL,NULL);
 /*!40000 ALTER TABLE `carts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -81,8 +84,8 @@ CREATE TABLE `products` (
   `name` varchar(200) NOT NULL,
   `image` varchar(100) DEFAULT NULL,
   `category_id` varchar(45) DEFAULT NULL,
-  `stock` int(11) DEFAULT 0,
-  `description` longtext DEFAULT NULL,
+  `stock` int(11) DEFAULT '0',
+  `description` longtext,
   `price` decimal(10,2) DEFAULT NULL,
   `discount` decimal(10,2) DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
@@ -97,7 +100,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'Smart TV 50” 4K Ultra HD TCL L50P65','MJyHShJMcpEA5oJH589abVwzEPIETkgY9iRvlvxY.jpeg','1',5,'Este tele se la rebanca.Podes ver nefli y escuchar spotify. Si tu viejo es zapatero zarpale la lata!!!\"',39999.00,17.00,'2019-12-17 15:27:57',NULL),(2,'SMART DE GOMA CON CONTROL REMOTO 55\"','q1ctTwVpBgNElXXpVZ6hs1BKX19f27i4XzCGwWqX.jpeg','1',1,'Este tele se la rebanca.Podes ver nefli y escuchar spotify. Si tu viejo es zapatero zarpale la lata!!!\"',39999.00,17.00,'2019-12-17 15:34:55',NULL),(3,'Cell 3',NULL,'2',1,'Este tele se la rebanca.Podes ver nefli y escuchar spotify. Si tu viejo es zapatero zarpale la lata!!!',25700.00,17.00,NULL,NULL),(4,'NB 54',NULL,'3',1,'Este tele se la rebanca.Podes ver nefli y escuchar spotify. Si tu viejo es zapatero zarpale la lata!!!',35000.00,17.00,NULL,NULL),(5,'celuuu',NULL,'2',1,'Este tele se la rebanca.Podes ver nefli y escuchar spotify. Si tu viejo es zapatero zarpale la lata!!!',39999.00,17.00,NULL,NULL),(6,'NOteb 1',NULL,'3',0,'Este tele se la rebanca.Podes ver nefli y escuchar spotify. Si tu viejo es zapatero zarpale la lata!!!',39999.00,17.00,NULL,NULL),(7,'Smart TV 50” 4K Ultra HD TCL L50P55',NULL,'1',1,'Este tele se la rebanca.Podes ver nefli y escuchar spotify. Si tu viejo es zapatero zarpale la lata!!!',55000.00,25.00,NULL,NULL),(8,'Smart TV 50” 4K Ultra HD TCL L50P55',NULL,'1',2,'Este tele se la rebanca.Podes ver nefli y escuchar spotify. Si tu viejo es zapatero zarpale la lata!!!',55000.00,20.00,NULL,NULL),(9,'Smart TV 50” 4K Ultra HD TCL L50P55',NULL,'1',2,'Este tele se la rebanca.Podes ver nefli y escuchar spotify. Si tu viejo es zapatero zarpale la lata!!!',55000.00,20.00,NULL,NULL),(10,'Smart TV 50” 4K Ultra HD TCL L50P55',NULL,'1',1,'Este tele se la rebanca.Podes ver nefli y escuchar spotify. Si tu viejo es zapatero zarpale la lata!!!',55000.00,20.00,NULL,NULL),(11,'Smart TV 50” 4K Ultra HD TCL L50P55',NULL,'1',4,'Este tele se la rebanca.Podes ver nefli y escuchar spotify. Si tu viejo es zapatero zarpale la lata!!!',55000.00,20.00,NULL,NULL),(12,'Smart TV 50” 4K Ultra HD TCL L50P55',NULL,'1',5,'Este tele se la rebanca.Podes ver nefli y escuchar spotify. Si tu viejo es zapatero zarpale la lata!!!',55000.00,20.00,NULL,NULL);
+INSERT INTO `products` VALUES (1,'Smart TV 50” 4K Ultra HD TCL L50P65','MJyHShJMcpEA5oJH589abVwzEPIETkgY9iRvlvxY.jpeg','1',5,'Este tele se la rebanca.Podes ver nefli y escuchar spotify. Si tu viejo es zapatero zarpale la lata!!!\"',39999.00,17.00,'2019-12-17 15:27:57',NULL),(2,'SMART DE GOMA CON CONTROL REMOTO 55\"','q1ctTwVpBgNElXXpVZ6hs1BKX19f27i4XzCGwWqX.jpeg','1',1,'Este tele se la rebanca.Podes ver nefli y escuchar spotify. Si tu viejo es zapatero zarpale la lata!!!\"',39999.00,17.00,'2019-12-17 15:34:55',NULL),(3,'Cell 3',NULL,'2',1,'Este tele se la rebanca.Podes ver nefli y escuchar spotify. Si tu viejo es zapatero zarpale la lata!!!',25700.00,17.00,NULL,NULL),(4,'NB 54',NULL,'3',1,'Este tele se la rebanca.Podes ver nefli y escuchar spotify. Si tu viejo es zapatero zarpale la lata!!!',35000.00,17.00,NULL,NULL),(5,'celuuu',NULL,'2',1,'Este tele se la rebanca.Podes ver nefli y escuchar spotify. Si tu viejo es zapatero zarpale la lata!!!',39999.00,17.00,NULL,NULL),(6,'NOteb 1',NULL,'3',0,'Este tele se la rebanca.Podes ver nefli y escuchar spotify. Si tu viejo es zapatero zarpale la lata!!!',39999.00,17.00,NULL,NULL),(7,'Smart TV 50” 4K Ultra HD TCL L50P55','T3Mhn7hNp9qc5GaGoWaK4eWevgkcIQwNsCyTvFbM.jpeg','1',1,'Este tele se la rebanca.Podes ver nefli y escuchar spotify. Si tu viejo es zapatero zarpale la lata!!!\"\"\"\"\"',55000.00,25.00,'2019-12-18 17:50:38',NULL),(8,'Smart TV 50” 4K Ultra HD TCL L50P55','7KgRIgg7IPrEMQWsZG3FNjWUbV8fE4FZHK6nWpD3.jpeg','1',2,'Este tele se la rebanca.Podes ver nefli y escuchar spotify. Si tu viejo es zapatero zarpale la lata!!!\"',55000.00,20.00,'2019-12-18 17:51:36',NULL),(9,'Smart TV 50” 4K Ultra HD TCL L50P55',NULL,'1',2,'Este tele se la rebanca.Podes ver nefli y escuchar spotify. Si tu viejo es zapatero zarpale la lata!!!',55000.00,20.00,NULL,NULL),(10,'Smart TV 50” 4K Ultra HD TCL L50P55',NULL,'1',1,'Este tele se la rebanca.Podes ver nefli y escuchar spotify. Si tu viejo es zapatero zarpale la lata!!!',55000.00,20.00,NULL,NULL),(11,'Smart TV 50” 4K Ultra HD TCL L50P55',NULL,'1',4,'Este tele se la rebanca.Podes ver nefli y escuchar spotify. Si tu viejo es zapatero zarpale la lata!!!',55000.00,20.00,NULL,NULL),(12,'Smart TV 50” 4K Ultra HD TCL L50P55',NULL,'1',5,'Este tele se la rebanca.Podes ver nefli y escuchar spotify. Si tu viejo es zapatero zarpale la lata!!!',55000.00,20.00,NULL,NULL);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -143,4 +146,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-12-18 13:48:28
+-- Dump completed on 2019-12-18 17:22:36

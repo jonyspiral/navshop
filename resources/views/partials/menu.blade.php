@@ -6,7 +6,7 @@
         <a  href="\">
           <img src="\img\logo.png" alt="" class="navbar-brand" style="width:50px; border-radius:15%; padding: 2%;"   >
         </a>
-        <a  href="cart">
+        <a  href="\cart">
             <img src="/img\icons8-shopaholic-50.png" alt="" class="navbar-brand" style="width:50px; border-radius:15%"  >
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">

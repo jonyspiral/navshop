@@ -33,7 +33,7 @@ public function add(Request $req){
   ];
   $this->validate($req,$reglas,$mensajes);
   $product= New Product ();
-  $route=$req->file('image')->store('public');
+  $route=$req->file('image')->store('public/products');
   $fileName=basename($route);
   $product->image=$fileName;
   $product->name=$req['name'];
@@ -83,7 +83,7 @@ public function loadFormEdit($id){
     $this->validate($req,$reglas,$mensajes);
     $product=  Product::find($id);
     if ($req->file('image')) {
-      $route=$req->file('image')->store('public');
+      $route=$req->file('image')->store('public/products');
       $fileName=basename($route);
       $product->image=$fileName;
     }
