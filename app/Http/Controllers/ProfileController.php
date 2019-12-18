@@ -20,24 +20,28 @@ class ProfileController extends Controller
           'avatar' => ['nullable','image'],
           // 'is_admin'=> 'boolean|nullable'
           ];
+          $mensajes=[
+            "string"=>"el campo :attribute debe ser un texto",
+            "unique"=>"el campo :attribute ya existe.",
+            "min"=>"el campo :attribute debe ser mas largo",
+            "max"=>"el campo :attribute debe ser mas corto",
+            "numeric"=>"el campo :attribute debe ser un numero",
+            "date"=>"el campo :attribute deber ser fecha"
+          ];
         if (isset($req['newPass'])) {
           $reglas['password']= 'required|string';
           $reglas['newPass'] = 'min:6|string|confirmed';
           $reglas['password_confirmation'] = 'required|same:password' ;
-          $validaNewPass = Validator::make($req->all(),$reglas);
-              if ($validaNewPass->fails()) {
-              // echo'estoy aca';
-                    $validaPass = Validator::make($req->all(),[
-                      'password'=> 'required|confirmed |string'
+          $validaNewPass = Validator::make($req->all(),$reglas,$mensajes);
+      // dd($validaNewPass);
+          if ((!$validaNewPass->fails())) {
 
-                    ]);                // redirect('post/create')
-                  if (!$validaPass->fails()){
-return 'llego a la ultima valida';
-                    $user->password = bcrypt($req['password']);
-                    dd($user);
+          $user->password = bcrypt($req['newPass']);
+          dd($user->password);
+
+          }
+
                   }
-              }
-      }
       $mensajes=[
         "string"=>"el campo :attribute debe ser un texto",
         "unique"=>"el campo :attribute ya existe.",
@@ -56,7 +60,7 @@ return 'llego a la ultima valida';
       }
         $user->name = $req['name'];
       $user->lastName = $req['lastName'];
-  return'ahora estoy aca che';
+   return'llegue al save';
       $user->save();
       return back();
           // return redirect()->back();
