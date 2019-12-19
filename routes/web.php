@@ -39,7 +39,7 @@ Route::get('/editProfile','ProfileController@edit')->middleware('auth');
 Route::post('/editProfile','ProfileController@update')->middleware('auth');
 
 Route::get('cart','CartController@show');
-Route::post('addCart','CartController@add');
+Route::post('/addCart/{id}','CartController@add')->name('addCart')->middleware('auth');
 
 
 Route::get('/logout', function(){

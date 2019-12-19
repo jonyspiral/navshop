@@ -18,15 +18,37 @@ public function show(){
   $carts = Auth::user()->products()->get();
   return view('cart', compact('title','carts'));
 }
-public function add(Request $req){
-  $cart=new Cart();
-  $cart->user_id= Auth::user()->id;
-  $cart->product_id=$req['id'];
-  $car
+public function add(Request $req, $id ){
+  $userId= Auth::user()->id;
+  $cartProduct=Cart::where([['product_id','=',$id],['user_id','=',$userId]])->get();
+  $product=Product::find($id);
+  $stock=$product->stock;
+  $cart= Cart::find($cartProduct->implode('id'));
+
+    if ($stock>=1){
+        if(count($cartProduct)==0){
+          $cart=new Cart();
+          $cart->user_id= $userId;
+          $cart->product_id=$id;
+          $cart->quantify++;
+          $cart->save();
+          $product->stock--;
+          $product->save();
+          return back();
+                }else{
+
+              $cart->quantify++;
+              $product->stock--;
+              $cart->save();
+              $product->save();
+              return back();
+            }
+          }else{
+            return 'Sin Stock';
+            }
 
 
-  return back();
+
+
 }
-
-
 }

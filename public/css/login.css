@@ -168,7 +168,7 @@ p {
    white-space: nowrap;
 }
 .btn {
-    margin-top: 5%;
+    margin-top: 2%;
     padding: 1px 6px;
     /* outline: none; */
     white-space: nowrap;
@@ -177,9 +177,9 @@ p {
     /* width: 70%; */
     text-align: center;
     /* font-size: 15pt; */
-    border-radius: 15px 15px 15px 15px;
-    -moz-border-radius: 15px 15px 15px 15px;
-    -webkit-border-radius: 15px 15px 15px 15px;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
 }
 
 .btnHalf{
@@ -208,7 +208,7 @@ p {
 .file-input::before {
     margin-top: 4%;
     content: '1-Select your avatar';
-    border-radius: 15px 15px 15px 15px;
+    border-radius: 10px 10px 10px 10px;
     color: #fff;
     background-color: #007bff;
     border-color: #007bff;

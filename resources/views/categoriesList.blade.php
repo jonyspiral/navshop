@@ -41,6 +41,7 @@
              <div class="container center">
                <h6 class="center" style=" ">{{$product->name}}</h6>
              </div>
+
               <div id="imagenCard" class="contPadreFlex" style="">
                 @if (!$product->image)
                   <div class=""  style="width:100%;border-radius: 15px;height:300px;">
@@ -51,18 +52,22 @@
                 @endif
                </div>
                <div id="containerButton"class="center" style="">
-                 <form action="/deleteProduct" method="post" id= "controlBox" class="card-text" style="display:contents;">
-                     {{csrf_field()}}
+                 <form action="/addCart/{{$product->id}}" method="post" id= "controlBox" class="card-text" style="display:contents;">
+                    @csrf
                      <input type="hidden" name="id" value="{{$product->id}}">
-                   <a type="submit" class="btn btn-primary" href="/editProduct/{{$product->id}}">E</a>
-                   <input type="submit"name="borrar" class="btn btn-success" href="/deleteProduct" value="-">
-                 </form >
-                    <a id="buttonCard1" href="cart" class=" btn btn-primary buttonCard btn-lg active " role="button" aria-pressed="true"><img src="https://img.icons8.com/ios-filled/50/000000/add-shopping-cart.png"></a>
+                   <a type="submit" href="/editProduct/{{$product->id}}"class="btn btn-primary" >E</a>
+                   <input type="submit"  href="/deleteProduct" name="borrar" class="btn btn-success" value="-">
+                    <input type="submit" id="buttonCard1"name="add" href="/addCart/{{$product->id}}" class=" btn btn-primary buttonCard btn-lg active " role="button" aria-pressed="true" value="Cart">
+                    {{-- <img src="https://img.icons8.com/ios-filled/50/000000/add-shopping-cart.png"></a> --}}
                     <a id="buttonCard1" href="/detailProduct/{{$product->id}}" target="_blank" class=" btn btn-primary btn-lg active" role="button" aria-pressed="true" style="cursor: zoom-in"><img  src="https://img.icons8.com/ios-filled/50/000000/zoom-to-extents.png"></a>
-
+                  </form >
                     <img id="cuotas" src="/img/12cuotas.png" alt="12-cuotas-sin-interes" style="">
                </div>
                <div id="containerPrice" class="center" style="">
+                 <div class="center">
+                   <label for="">Stock:</label>
+                   <h5 class="center" style=" ">{{$product->stock}}</h5>
+                 </div>
                   <span class="priceOld dollars">{{$product->price}}</span>
                   <span class="price dollars">{{$product->getpriceOff()}}</span>
                   <span class="discount">{{$product->discount}}% Off</span>
