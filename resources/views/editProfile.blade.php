@@ -59,7 +59,7 @@
                    </div>
 
 
-                  <div class="form-group row">
+                  {{-- <div class="form-group row">
                       <div class="col-md-6">
                           <input id="password" type="password" class="form-control @error('password') is-invalid @enderror"
                             name="password"  autocomplete="new-password"placeholder="{{ __('Password') }}">
@@ -80,7 +80,7 @@
                             <input id="password-confirm" type="password" class="form-control"
                             name="password_confirmation"   placeholder="{{ __('Confirm Password') }}">
                         </div>
-                    </div>
+                    </div>--}}
              <div class="center">
                <input class="center btn-primary btn" type='submit' value='enviar cambios'style="min-width: 200px;" />
              </div>

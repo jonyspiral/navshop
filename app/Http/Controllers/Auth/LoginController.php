@@ -41,4 +41,11 @@ class LoginController extends Controller
          return Redirect::to('/login');
 
     }
+    public function showLoginForm()
+    {
+
+        $title='Unetenos!!!';
+        return view('auth.login', compact('title'));
+    }
+
 }

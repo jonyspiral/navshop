@@ -24,33 +24,15 @@
 </div>
 <!--comienzan los cards -->
 <section id="grupoTarjeta" class="containerExt">
-
-
-<article class="card" >
-  <img src="https://img.icons8.com/ios-filled/50/000000/retro-tv.png" class="card-img-top">
-  <div class="card-body">
-    <h5 class="card-title">Televisores y audio</h5>
-    <p class="card-text">Los mejores televisores del mercado, al mejor precio en cuotas y envio gratis.</p>
-    <a href="teleAudio" class="btn btn-primary">ir a...</a>
-  </div>
-</article>
-
-<article class="card" >
-  <img src="/img\icons8-varios-smartphones-50.png" class="card-img-top">
-  <div class="card-body">
-    <h5 class="card-title">smartphones</h5>
-    <p class="card-text">Los mejores smartphones del mercado, al mejor precio en cuotas y envio gratis.</p>
-    <a href="celulares" class="btn btn-primary">ir a...</a>
-  </div>
-</article>
-
-<article class="card" >
-  <img src="/img\icons8-aplicación-para-laptop-50.png" class="card-img-top">
-  <div class="card-body">
-    <h5 class="card-title">Notebooks</h5>
-    <p class="card-text">Los mejores notebooks del mercado, al mejor precio en cuotas y envio gratis.</p>
-    <a href="notebooks" class="btn btn-primary">ir a...</a>
-  </div>
-</article>
+@foreach ($categories as $category )
+  <article class="card" >
+    <img src="img/categories/{{$category->image}}" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">{{$category->name}}</h5>
+      <p class="card-text">{{$category->description}}</p>
+      <a href="/categoryList/{{$category->id}}" class="btn btn-primary">ir a...</a>
+    </div>
+  </article>
+@endforeach
 </section>
 @endsection

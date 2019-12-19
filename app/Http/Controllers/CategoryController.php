@@ -25,7 +25,7 @@ public function getRoute($id){
   $categories=Category::all();
   $products=Product::where('category_id','=',"$id")->paginate(3);
 
-return view('categoriesList',compact('title','id','categories','products','log','logTitle','avatar'));
+return view('categoriesList',compact('title','id','categories','products'));
 }
 public function menu(){
   $categories=Category::all();

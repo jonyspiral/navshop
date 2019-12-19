@@ -46,10 +46,8 @@
                   <div class=""  style="width:100%;border-radius: 15px;height:300px;">
                         Imagen No Disponible
                   </div>
-                  {{-- <img id="" src="/storage/products/default.png" class="" style="width: 100%;border-radius: 15px;" alt=""> --}}
                 @else
                   <img id="" src="/storage/products/{{$product->image}}" class="" style="width: 100%;border-radius: 15px;" alt="">
-
                 @endif
                </div>
                <div id="containerButton"class="center" style="">
@@ -74,21 +72,6 @@
               </div>
           </article>
           @endforeach
-           {{-- <img class="card-img-top" src="images/default.png" alt="Card image cap">
-           <div class="card-body">
-             <h5 class="card-title">title</h5>
-             <p class="card-text">genre</p>
-             <p class="card-text">Rating:</p>
-             <p class="card-text">Awards: </p>
-             <p class="card-text">
-               <a class="btn btn-primary" href="">Ver Mas</a>
-               <a class="btn btn-success" href="">Editar</a>
-               </p>
-           </div> --}}
       </div>
     </div>
-
-
-
-
   @endsection

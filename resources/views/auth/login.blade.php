@@ -1,9 +1,10 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app') --}}
 
-@section('content')
-<div class="container">
+@extends('layouts.headerFooter')
+@section('main')
+<div class="py-4 container" style="margin-top:90px;" >
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-8"style="display: contents;">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
 

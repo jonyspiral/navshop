@@ -1,5 +1,5 @@
-@extends('layouts.app')
-
+{{-- @extends('layouts.app') --}}
+@extends('headerFooter.app')
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

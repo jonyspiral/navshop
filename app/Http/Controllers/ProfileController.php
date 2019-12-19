@@ -60,7 +60,8 @@ class ProfileController extends Controller
       }
         $user->name = $req['name'];
       $user->lastName = $req['lastName'];
-   return'llegue al save';
+      // dd($user);
+   // return'llegue al save';
       $user->save();
       return back();
           // return redirect()->back();

@@ -22,6 +22,7 @@ public function add(Request $req){
   $cart=new Cart();
   $cart->user_id= Auth::user()->id;
   $cart->product_id=$req['id'];
+  $car
 
 
   return back();

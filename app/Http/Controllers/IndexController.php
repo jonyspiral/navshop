@@ -11,18 +11,9 @@ class IndexController extends Controller
 
 public function loadIndex(){
  $categories=Category::all();
-   $title='Home';
-   $Userlog = Auth::user();
-   if ($Userlog==null){
-   $log= 'login';
-   $logTitle='Log in';
-   $avatar='/img/avatar/default.png';
-   }else{
-   $log= '/logout';
-   $logTitle='Log out';
-   $avatar='/img/avatar/'.$Userlog->avatar;
-   }
-  return view('index',compact('log','logTitle','avatar','title','categories'));
+   $title='Bienvenidos!!!';
+
+  return view('index',compact('title','categories'));
 }
 
 public function loadLogin(){
@@ -32,6 +23,6 @@ public function loadLogin(){
  return view('login',compact('email','errores','title'));
   }
 
-  
+
 
 }
