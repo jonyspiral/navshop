@@ -21,14 +21,17 @@
                     </span>
                 @enderror
             </div>
-        </div><div class="form-group">
+        </div>
+        <div class="form-group">
+          <div class="col-md-6">
                       <label for="email">Email</label>
                       <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" aria-describedby="emailHelp" placeholder="Tu Email" name="email"
                           value="{{ old('email')}}">
                        <div class="invalid-feedback">@error('email')
                          {{$message}}
                       @enderror</div>
-                    </div>
+                  </div>
+            </div>
       {{-- <div class="form-group row">
           <div class="col-md-6">
               <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="{{ __('E-Mail Address') }}"
@@ -50,11 +53,13 @@
 
                   </div> --}}
       <div class="form-group row">
+          <div class="col-md-6">
                 <input  type="text" class="form-control @error('name') is-invalid @enderror" id="name" aria-describedby="nameHelp"
                 name="name" value="{{ old('name') }}" placeholder="{{ __('Tu Nombre') }}"autofocus>
                 <div class="invalid-feedback">
                     @error('name'){{$message}}@enderror
                 </div>
+            </div>
       </div>
       <div class="form-group row">
           <div class="col-md-6">

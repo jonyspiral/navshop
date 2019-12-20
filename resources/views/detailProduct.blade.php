@@ -48,10 +48,13 @@
 
         </form>
         <form action="/deleteProduct" method="post" id= "controlBox" class="card-text" style="top: 110px; display: inline-block; position: absolute; right: 3%;">
+
             {{csrf_field()}}
+             @if (Auth::user()->is_admin)
             <input type="hidden" name="id" value="{{$product->id}}">
-          <a type="submit" class="btn btn-primary" href="/editProduct/{{$product->id}}">E</a>
-          <input type="submit"name="borrar" class="btn btn-success" href="/deleteProduct" value="-">
+            <input type="submit"name="borrar" class="btn btn-success" href="" value="Eliminar">
+          @endif
+
         </form >
 
       </div>

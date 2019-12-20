@@ -44,7 +44,8 @@ public function add(Request $req, $id ){
               return back();
             }
           }else{
-            return 'Sin Stock';
+            return back();
+            // return 'sin Stock';
             }
 
 

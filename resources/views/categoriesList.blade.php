@@ -28,10 +28,11 @@
                   {{-- pagination --}}
                   {{$products->links()}}
                 </nav>
-                <p class="card-text">
-                  <a class="btn btn-primary" href="/addProduct/{{$id}}">+</a>
-                  {{-- <a class="btn btn-success" href=""></a> --}}
-                  </p>
+                @if (Auth::user()->is_admin)
+                  <p class="card-text">
+                    <a class="btn btn-primary" href="/addProduct/{{$id}}">+</a>
+                    </p>
+                @endif
               </h2>
 
               <div class="">
@@ -55,9 +56,19 @@
                  <form action="/addCart/{{$product->id}}" method="post" id= "controlBox" class="card-text" style="display:contents;">
                     @csrf
                      <input type="hidden" name="id" value="{{$product->id}}">
+                       @if (Auth::user()->is_admin)
                    <a type="submit" href="/editProduct/{{$product->id}}"class="btn btn-primary" >E</a>
-                   <input type="submit"  href="/deleteProduct" name="borrar" class="btn btn-success" value="-">
-                    <input type="submit" id="buttonCard1"name="add" href="/addCart/{{$product->id}}" class=" btn btn-primary buttonCard btn-lg active " role="button" aria-pressed="true" value="Cart">
+                   {{-- <form class="" action="/deleteProduct/{{$product->id}}" method="post"> --}}
+                    {{-- <input type="submit"  href="" name="borrar" class="btn btn-success" value="-"> --}}
+
+                              @endif
+                       @if  (!$product->stock )
+                         <input type="submit" id="buttonCard1"name="add" href="" class=" btn btn-primary buttonCard btn-lg active " role="button"
+                          aria-pressed="true" value="Sin Stock "  style="font-size:12px;color:red;">
+                       @else
+                    <input type="submit" id="buttonCard1"name="add" href="/addCart/{{$product->id}}" class=" btn btn-primary buttonCard btn-lg active "
+                     role="button" aria-pressed="true" value="Add cart " style="font-size:12px;color:black;">
+                  @endif
                     {{-- <img src="https://img.icons8.com/ios-filled/50/000000/add-shopping-cart.png"></a> --}}
                     <a id="buttonCard1" href="/detailProduct/{{$product->id}}" target="_blank" class=" btn btn-primary btn-lg active" role="button" aria-pressed="true" style="cursor: zoom-in"><img  src="https://img.icons8.com/ios-filled/50/000000/zoom-to-extents.png"></a>
                   </form >

@@ -54,7 +54,7 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
           'lastName'=> ['required', 'string', 'max:255'],
-          'is_admin'=> [ 'boolean' , 'nullable'],
+
         ]);
     }
 
@@ -70,7 +70,7 @@ class RegisterController extends Controller
       $ruta='';
       if (isset($data['avatar'])) {
         $ruta= $data['avatar']->store('public/avatar');
-        dd($ruta);
+
         $ruta=basename($ruta);
       }
 
@@ -80,13 +80,13 @@ class RegisterController extends Controller
             'lastName'=> $data['lastName'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-          'is_admin'=> $data['is_admin'],
+
         ]);
     }
     public function showRegistrationForm(){
       $title = "unetenos";
       return view('register',compact('title',));
     }
-    
+
 
 }

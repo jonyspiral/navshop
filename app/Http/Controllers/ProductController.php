@@ -96,6 +96,7 @@ public function loadFormEdit($id){
   }
 
   public function delete(Request $req){
+
     $id=$req['id'];
     $product= Product::find($id);
     $product->delete();
