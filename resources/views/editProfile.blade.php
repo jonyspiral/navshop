@@ -57,8 +57,6 @@
                            @enderror
                        </div>
                    </div>
-
-
                   {{-- <div class="form-group row">
                       <div class="col-md-6">
                           <input id="password" type="password" class="form-control @error('password') is-invalid @enderror"

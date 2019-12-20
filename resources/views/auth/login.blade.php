@@ -53,6 +53,14 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <div class="">
+                                <div class="form-check-label">
+
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrate pulsando aqui.') }}</a>
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="form-group">
                             <div class="center" style="display:grid;">
